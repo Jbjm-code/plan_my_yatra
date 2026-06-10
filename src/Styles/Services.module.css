@@ -1,0 +1,150 @@
+.wrapper {
+  padding: 20px 80px;
+  background: #ffffff;
+}
+
+/* HEADING */
+
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-family:
+  "Playfair Display",
+  serif;
+}
+
+/* GRID */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+/* CARD */
+
+.card {
+  background: #fff;
+
+  border-radius: 12px;
+
+  padding: 26px;
+
+  border: 1px solid #e5e5e5;
+
+  transition: 0.3s ease;
+
+  cursor: pointer;
+}
+
+/* ICON */
+
+.icon {
+  width: 44px;
+  margin-bottom: 14px;
+}
+
+/* TITLE */
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 600;
+ font-family: "Playfair Display", serif;
+  margin-bottom: 10px;
+}
+
+/* DESCRIPTION */
+
+.card p {
+  font-size: 14px;
+
+  color: #666;
+
+  line-height: 1.7;
+
+  margin-bottom: 14px;
+}
+
+/* LINK */
+
+.link {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: red;
+}
+
+/* HOVER EFFECT */
+
+.card:hover {
+  transform: translateY(-6px);
+ border: 1px solid #ff4d4d;
+ background: #fffafa;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* LAST CARD RED BORDER STYLE */
+
+
+
+/* ================= TABLET ================= */
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wrapper {
+    padding: 50px 40px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wrapper {
+    padding: 40px 22px;
+  }
+
+  .heading {
+    font-size: 26px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .card p {
+    font-size: 13px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 22px;
+  }
+
+  .icon {
+    width: 36px;
+  }
+}
+
+.icon {
+  width: 44px;
+  margin-bottom: 14px;
+
+  filter: invert(18%) sepia(98%) saturate(7444%) hue-rotate(357deg)
+          brightness(95%) contrast(115%);
+}

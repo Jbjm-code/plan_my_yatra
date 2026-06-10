@@ -1,0 +1,833 @@
+/* ================= MAIN NAVBAR ================= */
+/* ================= MOBILE ADMIN ================= */
+
+.mobileAdminWrapper {
+  display: none;
+}
+.topStrip {
+  width: 100%;
+height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 40px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e8e8e8;
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* ================= LEFT SECTION ================= */
+
+.leftContact {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  flex-shrink: 0;
+}
+
+/* ================= LOGO ================= */
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 75px;
+}
+
+.logo {
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logoText {
+  font-size: 22px;
+  font-weight: 700;
+  color: #072755;
+  white-space: nowrap;
+font-family: "Dancing Script", cursive;
+}
+/* ================= CALL BOX ================= */
+
+.countryBox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  background: #f4f4f4;
+
+  border: 1px solid #dddddd;
+
+  padding: 6px 14px;
+
+  border-radius: 30px;
+
+  transition: 0.3s ease;
+}
+
+.countryBox:hover {
+  border-color: red;
+}
+
+/* FIX CALL ICON FULL SHOW */
+
+.countryBox img {
+  width: 22px;
+  height: 22px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+.countryBox span {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ================= RIGHT LINKS ================= */
+
+.rightLinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+
+  margin-left: auto;
+}
+
+.link {
+  text-decoration: none;
+
+  color: #000;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+}
+
+.link:hover {
+  color: red;
+}
+
+/* ================= LOGIN BUTTON ================= */
+
+.loginBtn {
+  border: 1px solid red;
+
+  background: transparent;
+
+  color: red;
+
+  padding: 10px 20px;
+
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.loginBtn:hover {
+  background: red;
+  color: white;
+}
+
+/* ================= MOBILE BUTTONS ================= */
+
+.mobileMenuBtn {
+  display: none;
+
+  background: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileLoginBtn {
+  display: none;
+
+  border: 1px solid red;
+
+  background: transparent;
+
+  color: red;
+
+  padding: 8px 16px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* ================= MOBILE MENU ================= */
+
+.mobileMenuWrapper {
+  position: fixed;
+
+  top: 68px;
+  left: -100%;
+
+  width: 260px;
+  height: 100vh;
+
+  background: white;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  padding: 30px 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  transition: 0.35s ease;
+
+  z-index: 999;
+}
+
+.showMenu {
+  left: 0;
+}
+
+.mobileLink {
+  text-decoration: none;
+
+  color: #111;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  border-bottom: 1px solid #f1f1f1;
+
+  padding: 14px 12px;
+
+  border-radius: 8px;
+
+  transition: 0.3s ease;
+}
+
+.mobileLink:hover {
+  background: #ffeded;
+
+  color: red;
+}
+
+/* ===============/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .topStrip {
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* LEFT SIDE */
+  .leftContact {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: auto;
+    justify-content: flex-start;
+  }
+
+  /* SHOW HAMBURGER */
+  .mobileMenuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  /* LOGO */
+  .logoSection {
+    justify-content: flex-start;
+    min-width: auto;
+  }
+
+  .logo {
+  width: 72px;
+  margin-right: 0;
+}
+  .logoText {
+  font-size: 17px;
+}
+
+  /* HIDE CALL BOX */
+  .countryBox {
+    display: none;
+  }
+
+  /* HIDE DESKTOP LINKS */
+  .rightLinks {
+    display: none;
+  }
+
+  /* RIGHT LOGIN BUTTON */
+  .mobileLoginBtn {
+    display: block;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  /* SHOW MOBILE ADMIN ICON */
+
+.mobileAdminWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.mobileAdminBtn {
+  display: flex;
+}
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+
+  .topStrip {
+    padding: 10px 12px;
+  }
+
+  .leftContact {
+    gap: 10px;
+  }
+
+  .logo {
+    width: 64px;
+  }
+.logoText {
+  font-size: 18px;
+}
+  .mobileLoginBtn {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+
+  .mobileMenuWrapper {
+    width: 230px;
+  }
+}
+
+/* ================= ADMIN WRAPPER ================= */
+
+.adminWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ================= ADMIN ICON ================= */
+
+.adminIconBtn,
+.mobileAdminBtn {
+
+  width: 48px;
+  height: 48px;
+color: #d50000;
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f1f1f1
+    );
+
+  box-shadow:
+    0 6px 18px rgba(146, 81, 81, 0.918),
+    inset 0 2px 6px rgba(255,255,255,0.8);
+
+  cursor: pointer;
+
+  font-size: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s ease;
+}
+
+.adminIconBtn:hover,
+.mobileAdminBtn:hover {
+
+  transform:
+    translateY(-3px)
+    scale(1.05);
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.22),
+    inset 0 2px 8px rgba(255,255,255,0.9);
+}
+
+/* ================= DROPDOWN ================= */
+
+.adminDropdown {
+
+  position: absolute;
+
+  top: 62px;
+  right: 0;
+
+  width: 260px;
+
+  background: rgba(255,255,255,0.96);
+
+  backdrop-filter: blur(14px);
+
+  border-radius: 18px;
+
+  padding: 14px;
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.18);
+
+  animation:
+    dropdownFade 0.25s ease;
+
+  z-index: 99999;
+}
+
+/* ================= ADMIN INFO ================= */
+
+.adminInfo {
+
+  padding-bottom: 14px;
+
+  border-bottom:
+    1px solid #ececec;
+
+  margin-bottom: 12px;
+}
+
+.adminInfo h4 {
+
+  font-size: 18px;
+
+  margin-bottom: 4px;
+
+  color: #111;
+}
+
+.adminInfo p {
+
+  font-size: 13px;
+
+  color: #666;
+
+  word-break: break-word;
+}
+
+/* ================= DROPDOWN ITEM ================= */
+
+.dropdownItem {
+
+  width: 100%;
+
+  display: block;
+
+  padding: 12px 14px;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+
+  color: #222;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: 0.25s ease;
+
+  margin-bottom: 6px;
+}
+
+.dropdownItem:hover {
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8f8f8,
+      #ececec
+    );
+
+  transform: translateX(3px);
+}
+
+/* ================= LOGOUT BUTTON ================= */
+
+.logoutBtn {
+
+  width: 100%;
+
+  border: none;
+
+  padding: 12px 14px;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #d50000,
+      #7f0000
+    );
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.logoutBtn:hover {
+
+  transform: translateY(-2px);
+
+  opacity: 0.95;
+}
+
+/* ================= LOGOUT OVERLAY ================= */
+
+.logoutOverlay,
+.successOverlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0,0,0,0.55);
+
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999999;
+
+  padding: 20px;
+}
+
+/* ================= LOGOUT POPUP ================= */
+
+.logoutPopup {
+
+  width: 100%;
+  max-width: 400px;
+
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 34px 26px;
+
+  text-align: center;
+
+  animation:
+    popupFade 0.3s ease;
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.25);
+}
+
+.logoutPopup h3 {
+
+  font-size: 26px;
+
+  margin-bottom: 12px;
+
+  color: #111;
+}
+
+.logoutPopup p {
+
+  color: #666;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+/* ================= ACTION BUTTONS ================= */
+
+.logoutActions {
+
+  margin-top: 24px;
+
+  display: flex;
+
+  gap: 14px;
+}
+
+.cancelBtn,
+.confirmLogoutBtn {
+
+  flex: 1;
+
+  height: 48px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+/* CANCEL */
+
+.cancelBtn {
+
+  background: #efefef;
+
+  color: #222;
+}
+
+.cancelBtn:hover {
+
+  background: #dfdfdf;
+}
+
+/* LOGOUT */
+
+.confirmLogoutBtn {
+
+  background:
+    linear-gradient(
+      135deg,
+      #d50000,
+      #7f0000
+    );
+
+  color: white;
+}
+
+.confirmLogoutBtn:hover {
+
+  transform: translateY(-2px);
+
+  opacity: 0.95;
+}
+
+/* ================= SUCCESS POPUP ================= */
+
+.successPopup {
+
+  width: 100%;
+  max-width: 360px;
+
+  background: white;
+
+  border-radius: 24px;
+
+  padding: 34px 24px;
+
+  text-align: center;
+
+  animation:
+    popupFade 0.3s ease;
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.25);
+}
+
+.successIcon {
+
+  width: 78px;
+  height: 78px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0bbf4f,
+      #06752f
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 34px;
+
+  margin: auto;
+  margin-bottom: 18px;
+
+  box-shadow:
+    0 10px 24px rgba(11,191,79,0.35);
+}
+
+.successPopup h3 {
+
+  font-size: 25px;
+
+  color: #111;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes dropdownFade {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(10px)
+      scale(0.95);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+@keyframes popupFade {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      scale(0.9);
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      scale(1);
+  }
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 768px) {
+
+  .adminDropdown {
+
+    width: 230px;
+
+    right: -10px;
+  }
+
+  .logoutPopup,
+  .successPopup {
+
+    max-width: 350px;
+
+    padding: 30px 22px;
+  }
+
+  .logoutPopup h3,
+  .successPopup h3 {
+
+    font-size: 22px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 480px) {
+
+  .adminIconBtn,
+  .mobileAdminBtn {
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 19px;
+  }
+
+  .adminDropdown {
+
+    width: 220px;
+
+    right: -12px;
+
+    top: 56px;
+
+    padding: 12px;
+  }
+
+  .dropdownItem,
+  .logoutBtn {
+
+    font-size: 13px;
+
+    padding: 11px 12px;
+  }
+
+  .logoutPopup,
+  .successPopup {
+
+    border-radius: 20px;
+
+    padding: 28px 18px;
+  }
+
+  .logoutActions {
+
+    flex-direction: column;
+  }
+
+  .cancelBtn,
+  .confirmLogoutBtn {
+
+    width: 100%;
+  }
+
+  .successIcon {
+
+    width: 68px;
+    height: 68px;
+
+    font-size: 28px;
+  }
+}

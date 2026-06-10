@@ -1,0 +1,128 @@
+.wrapper {
+  padding: 50px 80px;
+  background: #ffffff;
+}
+
+/* HEADING */
+
+.heading {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 45px;
+  color: #2c2c2c;
+  font-family:
+  "Playfair Display",
+  serif;
+}
+
+/* GRID */
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+}
+
+/* CARD */
+
+.card {
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 28px 24px;
+
+  background: #fff;
+
+  transition: 0.3s ease;
+
+  cursor: pointer;
+}
+
+/* HOVER EFFECT */
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 28px rgba(223, 27, 27, 0.05);
+  border: 1px solid red;
+}
+
+/* ICON */
+
+.icon {
+  width: 46px;
+  margin-bottom: 14px;
+
+  /* makes icon red like SOTC */
+  filter: brightness(0) saturate(100%)
+          invert(18%) sepia(98%) saturate(7444%)
+          hue-rotate(357deg)
+          brightness(95%) contrast(115%);
+}
+
+/* TITLE */
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #222;
+  font-family:
+  "Playfair Display",
+  serif;
+}
+
+/* DESCRIPTION */
+
+.card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* ================= LARGE TABLET ================= */
+
+@media (max-width: 1200px) {
+  .cardGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .wrapper {
+    padding: 60px 40px;
+  }
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 900px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .heading {
+    font-size: 26px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .wrapper {
+    padding: 45px 20px;
+  }
+
+  .heading {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .icon {
+    width: 38px;
+  }
+}

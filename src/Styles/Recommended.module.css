@@ -1,0 +1,474 @@
+.wrapper {
+  display: flex;
+  gap: 40px;
+  padding: 40px 40px;
+  background: #f6f6f6;
+}
+
+/* LEFT SIDE */
+
+.leftSection {
+  min-width: 200px;
+}
+
+.leftSection h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+font-family:
+  "Playfair Display",
+  serif;
+}
+
+/* STATS */
+
+.stats div {
+  margin-bottom: 10px;
+}
+
+.stats span {
+  font-size: 25px;
+  font-weight: 700;
+  color: red;
+  
+}
+
+.stats p {
+  margin-top: 3px;
+  color: #555;
+  font-family: "Cinzel", serif;
+}
+
+/* RIGHT SLIDER */
+
+.sliderWrapper {
+
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+}
+
+/* CARD CONTAINER */
+
+.cardContainer {
+
+  display: flex;
+
+  gap: 24px;
+
+  overflow-x: auto;
+
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+
+  padding-right: 40px;
+
+  box-sizing: border-box;
+}
+.cardContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+
+.card img {
+
+  width: 100%;
+
+  height: 220px;
+
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.4s ease;
+}
+.card:hover img {
+
+  transform: scale(1.03);
+}
+/* PRICE ROW */
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px 18px;
+  color: #666;
+}
+
+.priceRow strong {
+  color: black;
+}
+
+/* ARROWS */
+
+.arrow {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+  min-width: 30px;
+
+  border-radius: 50%;
+
+  border: none;
+
+  background: rgba(0, 0, 0, 0.486);
+
+  color: white;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.22);
+
+  margin-top: 140px;
+
+  z-index: 99;
+}
+
+.arrow:hover {
+
+  transform: scale(1.08);
+
+  background: rgb(248, 85, 85);
+}
+
+
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+
+.wrapper {
+  flex-direction: column;
+  padding: 50px 30px;
+}
+
+.leftSection h2 {
+  font-size: 34px;
+}
+
+.stats span {
+  font-size: 28px;
+}
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+.card {
+  min-width: 220px;
+}
+
+.card img {
+  height: 180px;
+}
+
+.arrow {
+  display: none;
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+
+.leftSection h2 {
+  font-size: 26px;
+}
+
+.stats span {
+  font-size: 24px;
+}
+
+.card {
+  min-width: 200px;
+}
+
+}
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 3px;
+
+  padding: 12px 1px 2px;
+}
+/* TITLE */
+
+.titleRow h4 {
+
+  flex: 1;
+
+  font-size: 18px;
+
+  line-height: 1.4;
+
+  font-family: "Playfair Display", serif;
+
+  color: #111;
+
+  margin-left: 10px;
+
+  min-height: 30px;
+
+  display: flex;
+  align-items: center;
+}
+/* OLD PRICE */
+
+.oldPrice {
+  white-space: nowrap;
+
+  font-size: 14px;
+
+  color: #000000;
+
+  text-decoration: line-through;
+margin-right: 20px;
+  margin-top: 8px;
+}
+
+/* PRICE ROW */
+
+.priceRow {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding: 0 16px 18px;
+
+  gap: 10px;
+
+  color: #666;
+
+  font-size: 16px;
+}
+
+.priceRow strong {
+  color: rgb(54, 122, 37);
+
+  font-size: 17px;
+
+  white-space: nowrap;
+}
+
+/* CARD */
+
+.card {
+
+  width: 290px;
+  min-width: 290px;
+  max-width: 290px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  transition: 0.3s ease;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  padding-bottom: 1px;
+}
+/* TABLET */
+
+@media (max-width: 768px) {
+
+  .card {
+    min-width: 240px;
+  }
+
+  .titleRow h4 {
+    font-size: 17px;
+  }
+
+  .oldPrice {
+    font-size: 13px;
+  }
+
+  .priceRow {
+    font-size: 14px;
+  }
+
+  .priceRow strong {
+    font-size: 18px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+
+  .card {
+
+  width: 220px;
+  min-width: 220px;
+  max-width: 220px;
+}
+
+  .card img {
+    height: 170px;
+  }
+
+  .titleRow {
+    padding: 7px 0 4px;
+  }
+
+  .priceRow {
+    padding: 0 12px 14px;
+    
+  }
+
+  .titleRow h4 {
+    font-size: 16px;
+  }
+
+  .oldPrice {
+    font-size: 13px;
+    margin-left: 20px;
+  }
+
+  .priceRow strong {
+    font-size: 14px;
+  }
+}
+
+.editActions {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 10px 10px 10px;
+}
+
+.editBtn,
+.saveBtn,
+.cancelBtn {
+
+  min-width: 90px;
+
+  border: none;
+
+  padding: 5px 10px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.editBtn{
+
+  background: #d50000;
+
+  color: white;
+}
+
+.saveBtn {
+
+  background: #65a134;
+
+  color: white;
+}
+
+.cancelBtn {
+
+  background: #ececec;
+
+  color: #111;
+}
+
+.editInput,
+.editPriceInput {
+
+  width: 100%;
+
+  padding: 8px 10px;
+
+  border-radius: 8px;
+
+  border: 1px solid #ccc;
+
+  outline: none;
+
+  font-size: 14px;
+}
+
+.popupOverlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0,0,0,0.6);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 99999;
+}
+
+.popupBox {
+
+  width: 90%;
+
+  max-width: 350px;
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 18px;
+
+  text-align: center;
+}
+
+.popupBtns {
+
+  margin-top: 20px;
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+}

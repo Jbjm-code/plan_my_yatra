@@ -1,0 +1,153 @@
+.wrapper {
+  padding: 40px 80px;
+  background: #fff;
+}
+
+/* HEADER */
+
+.header h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+   font-family: "Playfair Display", serif;
+}
+
+.header p {
+  max-width: 900px;
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.header span {
+  color: red;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* SLIDER */
+
+.sliderWrapper {
+  position: relative;
+  margin-top: 35px;
+}
+
+/* CARD CONTAINER */
+
+.cardContainer {
+  display: flex;
+  gap: 28px;
+
+  overflow-x: auto;
+  scroll-behavior: smooth;
+
+  scrollbar-width: none;
+}
+
+.cardContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+
+.card {
+  min-width: 280px;
+  flex: 0 0 calc(25% - 21px);
+
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 240px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* TITLE */
+
+.card h4 {
+  font-size: 18px;
+  margin-top: 14px;
+   font-family: "Playfair Display", serif;
+}
+
+/* PRICE */
+
+.price {
+  margin-top: 6px;
+  font-size: 14px;
+  color: #666;
+}
+
+.price strong {
+  color: black;
+}
+
+/* ARROWS */
+
+.arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  border: 1px solid #ccc;
+  background: white;
+
+  cursor: pointer;
+
+  z-index: 5;
+}
+
+.leftArrow {
+  left: -22px;
+}
+
+.rightArrow {
+  right: -22px;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .wrapper {
+    padding: 60px 40px;
+  }
+
+  .card {
+    flex: 0 0 calc(33.33% - 20px);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .card {
+    flex: 0 0 calc(50% - 16px);
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 40px 20px;
+  }
+
+  .header h2 {
+    font-size: 24px;
+  }
+
+  .card {
+    flex: 0 0 85%;
+  }
+}

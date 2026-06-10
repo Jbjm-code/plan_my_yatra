@@ -1,0 +1,458 @@
+/* ================= OVERLAY ================= */
+
+.authModalOverlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+
+  padding: 20px;
+}
+
+/* ================= MODAL ================= */
+
+.authModal {
+  width: 100%;
+  max-width: 430px;
+
+  background: #fff;
+
+  padding: 40px 30px;
+
+  border-radius: 22px;
+
+  position: relative;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.4);
+
+  animation: fadeUp 0.3s ease;
+}
+
+/* ================= CLOSE ================= */
+
+.authClose {
+  position: absolute;
+
+  top: 12px;
+  right: 16px;
+
+  border: none;
+  background: transparent;
+color: #111;
+  font-size: 24px;
+
+  cursor: pointer;
+}
+
+/* ================= ICON ================= */
+
+.authIcon {
+  width: 80px;
+  height: 80px;
+
+  margin: auto;
+  margin-bottom: 18px;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #d50000,
+    #7f0000
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 34px;
+}
+
+/* ================= TITLE ================= */
+
+.authTitle {
+  text-align: center;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  color: #111;
+}
+
+.authSubtitle {
+  text-align: center;
+
+  color: #777;
+
+  font-size: 14px;
+
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+/* ================= MESSAGE ================= */
+
+.authInlineMessage {
+  font-size: 14px;
+
+  text-align: center;
+
+  margin-bottom: 16px;
+}
+
+.error {
+  color: #d50000;
+}
+
+.success {
+  color: green;
+}
+
+/* ================= INPUT ================= */
+
+.authInput {
+  width: 100%;
+
+  height: 52px;
+
+  border: 1px solid #d7d7d7;
+
+  border-radius: 12px;
+
+  padding: 0 16px;
+
+  margin-bottom: 18px;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.3s ease;
+}
+
+.authInput:focus {
+  border-color: #d50000;
+
+  box-shadow:
+    0 0 0 4px rgba(213,0,0,0.12);
+}
+
+/* ================= FORGOT ================= */
+
+.authForgot {
+  text-align: center;
+
+  margin-bottom: 18px;
+}
+
+.authForgot a {
+  color: #d50000;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 500;
+}
+.authForgot a:hover {
+  color: #2106b9;
+}
+
+/* ================= BUTTON ================= */
+
+.authBtn {
+  width: 100%;
+
+  height: 52px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: linear-gradient(
+    135deg,
+    #d50000,
+    #7f0000
+  );
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.authBtn:hover {
+  opacity: 0.95;
+
+  transform: translateY(-2px);
+}
+
+/* ================= POPUP ================= */
+
+.globalPopupOverlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.65);
+
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 99999;
+}
+
+.popupIcon {
+  width: 72px;
+  height: 72px;
+
+  border-radius: 50%;
+
+  border: 4px solid #d50000;
+
+  color: #d50000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+
+  margin: auto;
+  margin-bottom: 18px;
+}
+
+.popupTitle {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.popupText {
+  margin-top: 10px;
+
+  color: #555;
+
+  font-size: 15px;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popupFade {
+
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 768px) {
+
+  .authModal {
+    max-width: 380px;
+
+    padding: 32px 24px;
+  }
+
+  .authTitle {
+    font-size: 26px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 480px) {
+
+  .authModalOverlay {
+    padding: 12px;
+  }
+
+  .authModal {
+    padding: 26px 18px;
+
+    border-radius: 18px;
+  }
+
+  .authTitle {
+    font-size: 22px;
+  }
+
+  .authSubtitle {
+    font-size: 13px;
+  }
+
+  .authInput {
+    height: 48px;
+
+    font-size: 14px;
+  }
+
+  .authBtn {
+    height: 48px;
+
+    font-size: 14px;
+  }
+
+  .authIcon {
+    width: 70px;
+    height: 70px;
+
+    font-size: 28px;
+  }
+}
+/* ================= POPUP CLOSE ================= */
+
+.popupClose {
+
+  position: absolute;
+
+  top: 12px;
+  right: 14px;
+
+  border: none;
+
+  background: transparent;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  color: #444;
+
+  transition: 0.2s ease;
+}
+
+.popupClose:hover {
+
+  color: #d50000;
+
+  transform: scale(1.1);
+}
+.globalPopup {
+  width: 90%;
+  max-width: 380px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 35px 24px;
+
+  text-align: center;
+
+  position: relative;
+
+  animation: popupFade 0.3s ease;
+}
+
+.authModalOverlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:rgba(0,0,0,0.6);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+padding:20px;
+box-sizing:border-box;
+}
+
+.authModal{
+width:100%;
+max-width:420px;
+background:#fff;
+padding:40px 30px;
+border-radius:20px;
+box-sizing:border-box;
+}
+
+.authTitle{
+font-size:28px;
+font-weight:700;
+text-align:center;
+margin-bottom:20px;
+}
+
+.authInput{
+width:100%;
+height:52px;
+padding:0 15px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:15px;
+box-sizing:border-box;
+outline:none;
+}
+
+.authBtn{
+width:100%;
+height:52px;
+border:none;
+border-radius:10px;
+background:#0e4752;
+color:#fff;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+}
+
+.authInlineMessage{
+margin-bottom:15px;
+padding:12px;
+border-radius:10px;
+font-size:14px;
+text-align:center;
+background:#f5f5f5;
+}
+
+@media(max-width:480px){
+
+.authModal{
+padding:30px 20px;
+}
+
+.authTitle{
+font-size:24px;
+}
+
+}

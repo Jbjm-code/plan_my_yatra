@@ -1,0 +1,249 @@
+.wrapper {
+  position: relative;
+  padding: 40px 60px;
+  overflow: hidden;
+}
+
+.bgVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.9),
+    rgba(0,0,0,0.2)
+  );
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+/* HEADING */
+.heading {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-family:
+  "Playfair Display",
+  serif;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.tab {
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+
+.active {
+  background: red;
+}
+
+/* FLEX */
+.flexRow {
+  display: flex;
+  gap: 30px;
+}
+
+/* LEFT BOX */
+.leftBox {
+  background: rgba(255,255,255,0.9);
+  padding: 25px;
+  border-radius: 12px;
+  width: 300px;
+  
+}
+
+
+/* SLIDER */
+.sliderWrapper {
+  position: relative;
+  flex: 1;
+}
+
+.cardContainer {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.cardContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* CARD */
+.card {
+  min-width: 280px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* PRICE */
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+
+/* NEW PRICE */
+.newPrice {
+  font-size: 16px;
+  font-weight: 500;
+  color: #338a30;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+}
+
+/* ARROWS */
+.arrow {
+  position: absolute;
+  top: 40%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  cursor: pointer;
+}
+
+.left {
+  left: -20px;
+}
+
+.right {
+  right: -20px;
+}
+
+/* DESKTOP: show 3 cards */
+@media (min-width: 1024px) {
+  .card {
+    min-width: calc(33.33% - 20px);
+  }
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .flexRow {
+    flex-direction: column;
+  }
+
+  .leftBox {
+    width: 100%;
+  }
+}
+
+/* MOBILE: show 1 card */
+@media (max-width: 600px) {
+  .card {
+    min-width: 90%;
+  }
+
+  .arrow {
+    display: block;
+  }
+}
+
+/* Smooth video switch */
+.bgVideo {
+  transition: opacity 0.5s ease;
+}
+
+/* active tab */
+.active {
+  background: red;
+}
+
+/* hover animation */
+.card:hover {
+  transform: translateY(-6px);
+}
+@media (max-width: 600px) {
+  .priceRow {
+    justify-content: space-between;
+  }
+
+  .oldPrice {
+    font-size: 11px;
+  }
+
+  .newPrice {
+    font-size: 14px;
+  }
+}
+
+.card {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 12px;
+}
+
+.topRow h4 {
+  font-size: 16px;
+  margin: 0;
+  font-family:
+  "Playfair Display",
+  serif;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 5px;
+}
+
+.days {
+  font-size: 14px;
+  color: #222;
+}
+.cardContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.cardContainer {
+  scrollbar-width: none;
+}

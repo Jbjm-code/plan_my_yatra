@@ -1,0 +1,279 @@
+.footerWrapper {
+  margin-top: 60px;
+  position: relative;
+
+  /* BACKGROUND IMAGE + PARALLAX */
+
+ background-image:
+linear-gradient(rgba(182, 3, 3, 0.74),
+                rgba(0, 0, 0, 0.479)),
+url("/footer/footer.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  color: #fdfdfd;
+}
+
+@media (max-width: 768px) {
+  .footerWrapper {
+    background-attachment: fixed;
+  }
+}
+
+.linksSection a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s ease;
+}
+
+.linksSection a:hover {
+  color: #ffd6d6;
+}
+
+/* CTA STRIP */
+
+.ctaStrip {
+  width: 85%;
+  margin: auto;
+  margin-top: -70px;
+
+  background: linear-gradient(90deg, #ff2d2d, #ff4b4b);
+
+  border-radius: 14px;
+
+  padding: 16px 40px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: white;
+
+  box-shadow: 0px 10px 40px rgba(255, 0, 0, 0.25);
+}
+
+.ctaLeft {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ctaLeft img {
+  width: 40px;
+}
+
+.ctaLeft h3 {
+  font-size: 22px;
+  font-weight: 600;
+  font-family:
+  "Playfair Display",
+  serif;
+}
+
+.ctaLeft p {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* BUTTON */
+
+.ctaBtn {
+  background: white;
+  color: #ff2d2d;
+
+  border: none;
+
+  padding: 12px 28px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.ctaBtn:hover {
+  background: #ffe5e5;
+}
+
+/* MAIN FOOTER */
+
+.footerContent {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.3fr;
+  gap: 18px;
+  padding: 50px 80px 60px;
+}
+.linksSection a {
+  line-height: 1.6;
+}
+
+.footerLogo {
+  width: 140px;
+  margin-bottom: 1px;
+}
+
+.newsletterSection {
+  margin-top: -40px;
+}
+
+.footerLogo {
+
+width:140px;
+
+display:block;
+
+margin-bottom:1px;
+
+/* DARK + WHITE GLOW EFFECT */
+
+filter:
+drop-shadow(0px 5px 8px rgba(179, 177, 177, 0.966))
+drop-shadow(10px 0px 4px rgba(255, 255, 255, 0.103))
+drop-shadow(1px 2px 1px rgba(255, 255, 255, 0.63));
+
+transition:.3s ease;
+
+}
+
+
+@media (max-width: 768px) {
+
+  .footerLogo {
+    width: 120px;
+    margin: auto;
+    display: block;
+    margin-bottom: 14px;
+  }
+
+}
+/* BRAND */
+
+.brandSection h2 {
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.brandSection p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.brandSection ul li {
+  margin-bottom: 8px;
+}
+
+/* LINKS */
+
+.linksSection h4,
+.gallerySection h4,
+.newsletterSection h4 {
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+
+.linksSection a {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.linksSection a:hover {
+  color: #dbc4c4;
+}
+
+/* GALLERY */
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.galleryGrid img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* NEWSLETTER */
+
+.inputBox {
+  display: flex;
+  background: #1c2420;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.inputBox input {
+  flex: 1;
+  border: none;
+  padding: 10px 14px;
+  background: transparent;
+  color: white;
+}
+
+.inputBox button {
+  background: #ff2d2d;
+  border: none;
+  padding: 0 16px;
+  color: white;
+  cursor: pointer;
+}
+
+.checkbox {
+  font-size: 12px;
+  margin-top: 12px;
+}
+
+/* COPYRIGHT */
+
+.bottomBar {
+  text-align: center;
+  padding: 14px;
+  border-top: 1px solid #ffffff;
+  font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .footerContent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ctaStrip {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footerContent {
+    grid-template-columns: 1fr;
+    padding: 70px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ctaLeft h3 {
+    font-size: 18px;
+  }
+
+  .ctaBtn {
+    width: 100%;
+  }
+}
