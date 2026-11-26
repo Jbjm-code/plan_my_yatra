@@ -27,7 +27,6 @@ D:\travel and tour\travel\obj\Debug\net8.0\staticwebassets.build.json.cache
 D:\travel and tour\travel\obj\Debug\net8.0\staticwebassets.development.json
 D:\travel and tour\travel\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 D:\travel and tour\travel\obj\Debug\net8.0\swae.build.ex.cache
-D:\travel and tour\travel\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 D:\travel and tour\travel\obj\Debug\net8.0\travel.csproj.Up2Date
 D:\travel and tour\travel\obj\Debug\net8.0\travel.dll
 D:\travel and tour\travel\obj\Debug\net8.0\refint\travel.dll
@@ -68,3 +67,6 @@ D:\travel and tour\travel\bin\Debug\net8.0\runtimes\win-x64\native\k5sprt64.dll
 D:\travel and tour\travel\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
 D:\travel and tour\travel\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
 D:\travel and tour\travel\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+D:\travel and tour\travel\bin\Debug\net8.0\dotnet-tools.json
+D:\travel and tour\travel\obj\Debug\net8.0\travel.sourcelink.json
+D:\travel and tour\travel\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

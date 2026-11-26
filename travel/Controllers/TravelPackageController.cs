@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using travel.Data;
 using travel.Models;
-using System.Text.Json;
 
 namespace travel.Controllers
 {
@@ -11,65 +10,47 @@ namespace travel.Controllers
     {
         private readonly AppDbContext _context;
 
-        public TravelPackageController(
-            AppDbContext context)
+        public TravelPackageController(AppDbContext context)
         {
             _context = context;
         }
 
+        // ===========================
+        // GET PACKAGE
+        // ===========================
+
         [HttpGet("{slug}")]
-        public IActionResult GetPackage(
-            string slug)
+        public IActionResult GetPackage(string slug)
         {
-            var package =
-                _context.TravelPackages
-                .FirstOrDefault(x =>
-                    x.slug == slug);
+            var package = _context.TravelPackages
+                .FirstOrDefault(x => x.slug == slug);
 
             if (package == null)
             {
                 return NotFound();
             }
 
-            var itinerary =
-                _context.TourItineraries
-                .Where(x =>
-                    x.package_id ==
-                    package.id)
-                .OrderBy(x =>
-                    x.day_no)
+            var itinerary = _context.TourItineraries
+                .Where(x => x.package_id == package.id)
+                .OrderBy(x => x.day_no)
                 .ToList();
 
             var inclusions =
-                _context.PackageInclusionExclusions
-                .Where(x =>
-                    x.package_id ==
-                    package.id &&
-                    x.item_type ==
-                    "inclusion")
-                .Select(x =>
-                    x.item_text)
-                .ToList();
+_context.PackageInclusionExclusions
+.Where(x =>
+x.package_id == package.id &&
+x.item_type == "inclusion")
+.ToList();
 
-            var exclusions =
-                _context.PackageInclusionExclusions
-                .Where(x =>
-                    x.package_id ==
-                    package.id &&
-                    x.item_type ==
-                    "exclusion")
-                .Select(x =>
-                    x.item_text)
-                .ToList();
+            var exclusions = _context.PackageInclusionExclusions
+.Where(x =>
+x.package_id == package.id &&
+x.item_type == "exclusion")
+.ToList();
 
-            var notes =
-                _context.PackageNotes
-                .Where(x =>
-                    x.package_id ==
-                    package.id)
-                .Select(x =>
-                    x.note_text)
-                .ToList();
+            var notes = _context.PackageNotes
+     .Where(x => x.package_id == package.id)
+     .ToList();
 
             return Ok(new
             {
@@ -89,153 +70,158 @@ namespace travel.Controllers
             });
         }
 
+        // ===========================
+        // UPDATE PACKAGE
+        // ===========================
+
         [HttpPut("{slug}")]
         public IActionResult UpdatePackage(
             string slug,
-            [FromBody] JsonElement data
-        )
+            [FromBody] UpdateTravelPackageRequest request)
         {
-            var package =
-                _context.TravelPackages
-                .FirstOrDefault(x =>
-                    x.slug == slug);
+            var package = _context.TravelPackages
+                .FirstOrDefault(x => x.slug == slug);
 
             if (package == null)
             {
-                return NotFound();
-            }
-
-            package.package_name =
-                data.GetProperty("package_name")
-                .GetString() ?? "";
-
-            package.subtitle =
-                data.GetProperty("subtitle")
-                .GetString() ?? "";
-
-            package.duration =
-                data.GetProperty("duration")
-                .GetString() ?? "";
-
-            package.cities_covered =
-                data.GetProperty("cities_covered")
-                .GetString() ?? "";
-
-            package.ideal_for =
-                data.GetProperty("ideal_for")
-                .GetString() ?? "";
-
-            package.pricing =
-                data.GetProperty("pricing")
-                .GetString() ?? "";
-
-            // Update Itinerary
-
-            var itineraryArray =
-                data.GetProperty("itinerary");
-
-            foreach (var item in itineraryArray.EnumerateArray())
-            {
-                int itineraryId =
-                    item.GetProperty("id")
-                    .GetInt32();
-
-                var dbItem =
-                    _context.TourItineraries
-                    .FirstOrDefault(x =>
-                        x.id == itineraryId);
-
-                if (dbItem != null)
+                return NotFound(new
                 {
-                    dbItem.day_no =
-                        item.GetProperty("day_no")
-                        .GetInt32();
-
-                    dbItem.day_title =
-                        item.GetProperty("day_title")
-                        .GetString() ?? "";
-
-                    dbItem.day_description =
-                        item.GetProperty("day_description")
-                        .GetString() ?? "";
-                }
+                    message = "Package not found"
+                });
             }
 
-            // Update Inclusions
+            // Basic Details Update
 
-            var inclusionList =
-                _context.PackageInclusionExclusions
+            if (!string.IsNullOrWhiteSpace(request.package_name))
+                package.package_name = request.package_name;
+
+            if (!string.IsNullOrWhiteSpace(request.subtitle))
+                package.subtitle = request.subtitle;
+
+            if (!string.IsNullOrWhiteSpace(request.duration))
+                package.duration = request.duration;
+
+            if (!string.IsNullOrWhiteSpace(request.cities_covered))
+                package.cities_covered = request.cities_covered;
+
+            if (!string.IsNullOrWhiteSpace(request.ideal_for))
+                package.ideal_for = request.ideal_for;
+
+            if (!string.IsNullOrWhiteSpace(request.pricing))
+                package.pricing = request.pricing;
+
+            // Existing Lists
+
+            var inclusionList = _context.PackageInclusionExclusions
                 .Where(x =>
                     x.package_id == package.id &&
                     x.item_type == "inclusion")
                 .ToList();
 
-            var inclusionArray =
-                data.GetProperty("inclusions");
-
-            for (
-                int i = 0;
-                i < inclusionList.Count &&
-                i < inclusionArray.GetArrayLength();
-                i++
-            )
-            {
-                inclusionList[i].item_text =
-                    inclusionArray[i].GetString() ?? "";
-            }
-
-            // Update Exclusions
-
-            var exclusionList =
-                _context.PackageInclusionExclusions
+            var exclusionList = _context.PackageInclusionExclusions
                 .Where(x =>
                     x.package_id == package.id &&
                     x.item_type == "exclusion")
                 .ToList();
 
-            var exclusionArray =
-                data.GetProperty("exclusions");
-
-            for (
-                int i = 0;
-                i < exclusionList.Count &&
-                i < exclusionArray.GetArrayLength();
-                i++
-            )
-            {
-                exclusionList[i].item_text =
-                    exclusionArray[i].GetString() ?? "";
-            }
-
-            // Update Notes
-
-            var noteList =
-                _context.PackageNotes
+            var noteList = _context.PackageNotes
                 .Where(x =>
                     x.package_id == package.id)
                 .ToList();
 
-            var noteArray =
-                data.GetProperty("notes");
+            var itineraryList = _context.TourItineraries
+                .Where(x =>
+                    x.package_id == package.id)
+                .ToList();
 
-            for (
-                int i = 0;
-                i < noteList.Count &&
-                i < noteArray.GetArrayLength();
-                i++
-            )
+            // Continue in Part 2...
+
+            // ===========================
+            // UPDATE ITINERARY
+            // ===========================
+
+            _context.TourItineraries.RemoveRange(itineraryList);
+
+            foreach (var item in request.itinerary)
             {
-                noteList[i].note_text =
-                    noteArray[i].GetString() ?? "";
+                _context.TourItineraries.Add(
+    new TourItinerary
+    {
+        package_id = package.id,
+        day_no = item.day_no,
+        day_title = item.day_title,
+        day_subtitle = item.day_subtitle,
+        day_description = item.day_description
+    });
+            }
+
+            // ===========================
+            // UPDATE INCLUSIONS
+            // ===========================
+
+            _context.PackageInclusionExclusions.RemoveRange(inclusionList);
+            foreach (var item in request.inclusions)
+            {
+                if (!string.IsNullOrWhiteSpace(item.item_text))
+                {
+                    _context.PackageInclusionExclusions.Add(
+                        new PackageInclusionExclusion
+                        {
+                            package_id = package.id,
+                            item_type = "inclusion",
+                            item_text = item.item_text.Trim()
+                        });
+                }
+            }
+
+            // ===========================
+            // UPDATE EXCLUSIONS
+            // ===========================
+
+            _context.PackageInclusionExclusions.RemoveRange(exclusionList);
+
+            foreach (var item in request.exclusions)
+            {
+                if (!string.IsNullOrWhiteSpace(item.item_text))
+                {
+                    _context.PackageInclusionExclusions.Add(
+                        new PackageInclusionExclusion
+                        {
+                            package_id = package.id,
+                            item_type = "exclusion",
+                            item_text = item.item_text.Trim()
+                        });
+                }
+            }
+
+            // ===========================
+            // UPDATE NOTES
+            // ===========================
+
+            _context.PackageNotes.RemoveRange(noteList);
+
+            foreach (var item in request.notes)
+            {
+                if (!string.IsNullOrWhiteSpace(item.note_text))
+                {
+                    _context.PackageNotes.Add(
+                        new PackageNote
+                        {
+                            package_id = package.id,
+                            note_text = item.note_text.Trim()
+                        });
+                }
             }
 
             _context.SaveChanges();
 
             return Ok(new
             {
-                message =
-                    "Package Updated Successfully"
+                success = true,
+                message = "Package Updated Successfully"
             });
+
+
         }
     }
 }

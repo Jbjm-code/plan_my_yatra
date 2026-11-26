@@ -3,20 +3,32 @@
   "WorkspaceRootPath": "D:\\travel and tour\\travel\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\controllers\\packagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:controllers\\packagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\controllers\\travelpackagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:controllers\\travelpackagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\packagedetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\packagedetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\controllers\\packagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:controllers\\packagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\updatepackagerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,16 +39,44 @@
       "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\package.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\travelpackagepoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\travelpackagepoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\forgotpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\forgotpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\forgotresetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\forgotresetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\resetpasswordrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\verifyotprequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\verifyotprequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\adminupdaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\adminupdaterequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\travelpackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\travelpackage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\controllers\\travelpackagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:controllers\\travelpackagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\updatetravelpackagerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\updatetravelpackagerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\travelpackagepoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\travelpackagepoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\touritinerary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -51,20 +91,12 @@
       "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\packageinclusionexclusion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\travel.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:travel.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|d:\\travel and tour\\travel\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9129A82D-C4DD-8739-D11B-61399B631E6A}|travel.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,20 +106,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 14,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UpdatePackageRequest.cs",
-              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\UpdatePackageRequest.cs",
-              "RelativeDocumentMoniker": "Models\\UpdatePackageRequest.cs",
-              "ToolTip": "D:\\travel and tour\\travel\\Models\\UpdatePackageRequest.cs",
-              "RelativeToolTip": "Models\\UpdatePackageRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-05T12:18:35.186Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -96,75 +116,99 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\travel and tour\\travel\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGQAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-03T08:57:28.085Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 16,
               "Title": "TravelPackageController.cs",
               "DocumentMoniker": "D:\\travel and tour\\travel\\Controllers\\TravelPackageController.cs",
               "RelativeDocumentMoniker": "Controllers\\TravelPackageController.cs",
               "ToolTip": "D:\\travel and tour\\travel\\Controllers\\TravelPackageController.cs",
               "RelativeToolTip": "Controllers\\TravelPackageController.cs",
-              "ViewState": "AgIAANsAAAAAAAAAAAAAwPAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-04T12:42:44.71Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "PackagesController.cs",
               "DocumentMoniker": "D:\\travel and tour\\travel\\Controllers\\PackagesController.cs",
               "RelativeDocumentMoniker": "Controllers\\PackagesController.cs",
               "ToolTip": "D:\\travel and tour\\travel\\Controllers\\PackagesController.cs",
               "RelativeToolTip": "Controllers\\PackagesController.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAA2wF8AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-03T10:15:45.089Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Package.cs",
-              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\Package.cs",
-              "RelativeDocumentMoniker": "Models\\Package.cs",
-              "ToolTip": "D:\\travel and tour\\travel\\Models\\Package.cs",
-              "RelativeToolTip": "Models\\Package.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAcwBIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T10:09:40.32Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PackageDetail.cs",
-              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\PackageDetail.cs",
-              "RelativeDocumentMoniker": "Models\\PackageDetail.cs",
-              "ToolTip": "D:\\travel and tour\\travel\\Models\\PackageDetail.cs",
-              "RelativeToolTip": "Models\\PackageDetail.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-04T06:10:15.21Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\travel and tour\\travel\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
               "ToolTip": "D:\\travel and tour\\travel\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAADwv0QAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAAAEAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-03T08:56:56.317Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
+              "Title": "Package.cs",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\Package.cs",
+              "RelativeDocumentMoniker": "Models\\Package.cs",
+              "ToolTip": "D:\\travel and tour\\travel\\Models\\Package.cs",
+              "RelativeToolTip": "Models\\Package.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAYAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T10:09:40.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TravelPackage.cs",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\TravelPackage.cs",
+              "RelativeDocumentMoniker": "Models\\TravelPackage.cs",
+              "ToolTip": "D:\\travel and tour\\travel\\Models\\TravelPackage.cs",
+              "RelativeToolTip": "Models\\TravelPackage.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T12:38:53.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UpdateTravelPackageRequest.cs",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\UpdateTravelPackageRequest.cs",
+              "RelativeDocumentMoniker": "Models\\UpdateTravelPackageRequest.cs",
+              "ToolTip": "D:\\travel and tour\\travel\\Models\\UpdateTravelPackageRequest.cs",
+              "RelativeToolTip": "Models\\UpdateTravelPackageRequest.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAwBgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-15T12:20:13.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UpdatePackageRequest.cs",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\UpdatePackageRequest.cs",
+              "RelativeDocumentMoniker": "Models\\UpdatePackageRequest.cs",
+              "ToolTip": "D:\\travel and tour\\travel\\Models\\UpdatePackageRequest.cs",
+              "RelativeToolTip": "Models\\UpdatePackageRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-05T12:18:35.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
               "Title": "TravelPackagePoint.cs",
               "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\TravelPackagePoint.cs",
               "RelativeDocumentMoniker": "Models\\TravelPackagePoint.cs",
@@ -176,43 +220,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "PackageInclusionExclusion.cs",
-              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\PackageInclusionExclusion.cs",
-              "RelativeDocumentMoniker": "Models\\PackageInclusionExclusion.cs",
-              "ToolTip": "D:\\travel and tour\\travel\\Models\\PackageInclusionExclusion.cs",
-              "RelativeToolTip": "Models\\PackageInclusionExclusion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-04T12:39:46.199Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TravelPackage.cs",
-              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\TravelPackage.cs",
-              "RelativeDocumentMoniker": "Models\\TravelPackage.cs",
-              "ToolTip": "D:\\travel and tour\\travel\\Models\\TravelPackage.cs",
-              "RelativeToolTip": "Models\\TravelPackage.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAA0wBQAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-04T12:38:53.519Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 19,
               "Title": "TourItinerary.cs",
               "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\TourItinerary.cs",
               "RelativeDocumentMoniker": "Models\\TourItinerary.cs",
               "ToolTip": "D:\\travel and tour\\travel\\Models\\TourItinerary.cs",
               "RelativeToolTip": "Models\\TourItinerary.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAcwBAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-04T12:39:23.352Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 20,
               "Title": "PackageNote.cs",
               "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\PackageNote.cs",
               "RelativeDocumentMoniker": "Models\\PackageNote.cs",
@@ -224,19 +244,56 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Admin.cs",
-              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\Admin.cs",
-              "RelativeDocumentMoniker": "Models\\Admin.cs",
-              "ToolTip": "D:\\travel and tour\\travel\\Models\\Admin.cs",
-              "RelativeToolTip": "Models\\Admin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "DocumentIndex": 21,
+              "Title": "PackageInclusionExclusion.cs",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\PackageInclusionExclusion.cs",
+              "RelativeDocumentMoniker": "Models\\PackageInclusionExclusion.cs",
+              "ToolTip": "D:\\travel and tour\\travel\\Models\\PackageInclusionExclusion.cs",
+              "RelativeToolTip": "Models\\PackageInclusionExclusion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T08:55:48.603Z"
+              "WhenOpened": "2026-06-04T12:39:46.199Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "D:\\travel and tour\\travel\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAqwIIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T08:44:37.865Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "travel.csproj",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\travel.csproj",
+              "RelativeDocumentMoniker": "travel.csproj",
+              "ToolTip": "D:\\travel and tour\\travel\\travel.csproj",
+              "RelativeToolTip": "travel.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-12T05:25:14.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "Services\\EmailService.cs",
+              "ToolTip": "D:\\travel and tour\\travel\\Services\\EmailService.cs",
+              "RelativeToolTip": "Services\\EmailService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAswDIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-13T10:08:01.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
               "Title": "LoginRequest.cs",
               "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\LoginRequest.cs",
               "RelativeDocumentMoniker": "Models\\LoginRequest.cs",
@@ -248,27 +305,102 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AdminController.cs",
-              "DocumentMoniker": "D:\\travel and tour\\travel\\Controllers\\AdminController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
-              "ToolTip": "D:\\travel and tour\\travel\\Controllers\\AdminController.cs",
-              "RelativeToolTip": "Controllers\\AdminController.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAwwDUAAAABAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "ForgotPasswordRequest.cs",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\ForgotPasswordRequest.cs",
+              "RelativeDocumentMoniker": "Models\\ForgotPasswordRequest.cs",
+              "ToolTip": "D:\\travel and tour\\travel\\Models\\ForgotPasswordRequest.cs",
+              "RelativeToolTip": "Models\\ForgotPasswordRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-03T08:44:37.865Z"
+              "WhenOpened": "2026-06-13T09:47:05.943Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "D:\\travel and tour\\travel\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-13T10:03:49.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ForgotResetPasswordRequest.cs",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\ForgotResetPasswordRequest.cs",
+              "RelativeDocumentMoniker": "Models\\ForgotResetPasswordRequest.cs",
+              "ToolTip": "D:\\travel and tour\\travel\\Models\\ForgotResetPasswordRequest.cs",
+              "RelativeToolTip": "Models\\ForgotResetPasswordRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-13T09:48:06.193Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "VerifyOtpRequest.cs",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\VerifyOtpRequest.cs",
+              "RelativeDocumentMoniker": "Models\\VerifyOtpRequest.cs",
+              "ToolTip": "D:\\travel and tour\\travel\\Models\\VerifyOtpRequest.cs",
+              "RelativeToolTip": "Models\\VerifyOtpRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-13T09:47:39.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ResetPasswordRequest.cs",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\ResetPasswordRequest.cs",
+              "RelativeDocumentMoniker": "Models\\ResetPasswordRequest.cs",
+              "ToolTip": "D:\\travel and tour\\travel\\Models\\ResetPasswordRequest.cs",
+              "RelativeToolTip": "Models\\ResetPasswordRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-13T07:41:13.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AdminUpdateRequest.cs",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\AdminUpdateRequest.cs",
+              "RelativeDocumentMoniker": "Models\\AdminUpdateRequest.cs",
+              "ToolTip": "D:\\travel and tour\\travel\\Models\\AdminUpdateRequest.cs",
+              "RelativeToolTip": "Models\\AdminUpdateRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-13T07:40:46.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "D:\\travel and tour\\travel\\Models\\Admin.cs",
+              "RelativeDocumentMoniker": "Models\\Admin.cs",
+              "ToolTip": "D:\\travel and tour\\travel\\Models\\Admin.cs",
+              "RelativeToolTip": "Models\\Admin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-03T08:55:48.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\travel and tour\\travel\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "D:\\travel and tour\\travel\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-06-03T08:59:42.809Z"
+              "WhenOpened": "2026-06-03T08:59:42.809Z",
+              "EditorCaption": ""
             }
           ]
         }

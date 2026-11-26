@@ -1,6 +1,7 @@
-import { useState } from "react";
 import styles from "../Styles/RegionDestinations.module.css";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+
 const data = {
   North: [
   {
@@ -215,9 +216,30 @@ const data = {
 };
 
 export default function RegionDestinations() {
-  const [activeTab, setActiveTab] = useState("North");
+ const [activeTab, setActiveTab] = useState(
+  localStorage.getItem("activeRegion") || "North"
+);
 
+useEffect(() => {
+  localStorage.setItem(
+    "activeRegion",
+    activeTab
+  );
+}, [activeTab]);
   const tabs = ["North", "South", "East", "West", "Central"];
+
+  useEffect(() => {
+  const handlePageReload = () => {
+    localStorage.removeItem("activeRegion");
+  };
+
+  window.addEventListener("beforeunload", handlePageReload);
+
+  return () => {
+    window.removeEventListener("beforeunload", handlePageReload);
+  };
+}, []);
+  
 return (
   <section className={styles.wrapper}>
     <h2 className={styles.heading}>

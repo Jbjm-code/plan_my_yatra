@@ -1,5 +1,6 @@
 import styles from "../Styles/navbar.module.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
 import {
   useState,
   useEffect,
@@ -10,6 +11,8 @@ import Login from "../Components/Login";
 import { User } from "lucide-react";
 
 function Navbar() {
+
+  const [showNavbar, setShowNavbar] = useState(true);
   const [showLogin, setShowLogin] =
   useState(false);
 
@@ -32,6 +35,26 @@ const [showLogoutSuccess,
   setShowLogoutSuccess] =
   useState(false);
 const dropdownRef = useRef();
+const mobileMenuRef = useRef();
+
+
+useEffect(() => {
+  const handleOutsideClick = (e) => {
+    if (
+      mobileMenu &&
+      mobileMenuRef.current &&
+      !mobileMenuRef.current.contains(e.target)
+    ) {
+      setMobileMenu(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleOutsideClick);
+
+  return () => {
+    document.removeEventListener("mousedown", handleOutsideClick);
+  };
+}, [mobileMenu]);
 
 useEffect(() => {
 
@@ -66,6 +89,9 @@ useEffect(() => {
 
 }, []);
 
+useEffect(() => {
+  setShowNavbar(true);
+}, []);
 
   useEffect(() => {
 
@@ -103,7 +129,13 @@ useEffect(() => {
     <>
       {/* ================= NAVBAR ================= */}
 
-      <div className={styles.topStrip}>
+      <div
+  className={`${styles.topStrip} ${
+    showNavbar
+      ? styles.navbarVisible
+      : styles.navbarHidden
+  }`}
+>
 
         {/* ===== MOBILE LEFT HAMBURGER ===== */}
         <button
@@ -124,30 +156,56 @@ useEffect(() => {
           <div className={styles.logoSection}>
   <Link to="/" className={styles.logoWrapper}>
     <img
-      src="/logo.png"
+      src="/newlogo.png"
       alt="logo"
       className={styles.logo}
     />
 
-    <span className={styles.logoText}>
-      Plan My Yatraa
-    </span>
   </Link>
 </div>
 
           {/* CALL BOX */}
           <div className={styles.countryBox}>
             <img src="/icons/call.png" alt="call" />
-            <span>+91 9876543210</span>
+            <span>+91 9067777990</span>
           </div>
 
         </div>
 
         {/* ===== DESKTOP LINKS ===== */}
         <div className={styles.rightLinks}>
-          <Link to="/" className={styles.link}>Home</Link>
-          <Link to="/about" className={styles.link}>About us</Link>
-          <Link to="/contact" className={styles.link}>Contact</Link>
+         <NavLink
+  to="/"
+  className={({ isActive }) =>
+    isActive
+      ? `${styles.link} ${styles.activeLink}`
+      : styles.link
+  }
+>
+  Home
+</NavLink>
+
+<NavLink
+  to="/about"
+  className={({ isActive }) =>
+    isActive
+      ? `${styles.link} ${styles.activeLink}`
+      : styles.link
+  }
+>
+  About us
+</NavLink>
+
+<NavLink
+  to="/contact"
+  className={({ isActive }) =>
+    isActive
+      ? `${styles.link} ${styles.activeLink}`
+      : styles.link
+  }
+>
+  Contact
+</NavLink>
 {isAdminLoggedIn ? (
 
 <div
@@ -174,7 +232,7 @@ useEffect(() => {
 
           <h4>Admin</h4>
 
-          <p>admin@gmail.com</p>
+          
 
         </div>
 
@@ -188,15 +246,15 @@ useEffect(() => {
           Admin Information
         </Link>
 
-        <Link
-          to="/admin-reset-password"
-          className={styles.dropdownItem}
-           onClick={() =>
+       <Link
+  to="/admin-forgot-password"
+  className={styles.dropdownItem}
+  onClick={() =>
     setShowAdminMenu(false)
   }
-        >
-          Reset Password
-        </Link>
+>
+  Reset Password
+</Link>
 
         <button
           className={styles.logoutBtn}
@@ -258,7 +316,7 @@ useEffect(() => {
 
           <h4>Admin</h4>
 
-          <p>admin@gmail.com</p>
+          
 
         </div>
 
@@ -269,12 +327,12 @@ useEffect(() => {
           Admin Information
         </Link>
 
-        <Link
-          to="/admin-reset-password"
-          className={styles.dropdownItem}
-        >
-          Reset Password
-        </Link>
+       <Link
+  to="/admin-forgot-password"
+  className={styles.dropdownItem}
+>
+  Reset Password
+</Link>
 
         <button
           className={styles.logoutBtn}
@@ -312,33 +370,46 @@ useEffect(() => {
       {/* ================= MOBILE MENU ================= */}
 
       <div
-        className={`${styles.mobileMenuWrapper} ${
-          mobileMenu ? styles.showMenu : ""
-        }`}
-      >
-        <Link
-          to="/"
-          className={styles.mobileLink}
-          onClick={() => setMobileMenu(false)}
-        >
-          Home
-        </Link>
+  ref={mobileMenuRef}
+  className={`${styles.mobileMenuWrapper} ${
+    mobileMenu ? styles.showMenu : ""
+  }`}
+>
+       <NavLink
+  to="/"
+  className={({ isActive }) =>
+    isActive
+      ? `${styles.mobileLink} ${styles.activeLink}`
+      : styles.mobileLink
+  }
+  onClick={() => setMobileMenu(false)}
+>
+  Home
+</NavLink>
 
-        <Link
-          to="/about"
-          className={styles.mobileLink}
-          onClick={() => setMobileMenu(false)}
-        >
-          About us
-        </Link>
+         <NavLink
+  to="/about"
+  className={({ isActive }) =>
+    isActive
+      ? `${styles.mobileLink} ${styles.activeLink}`
+      : styles.mobileLink
+  }
+  onClick={() => setMobileMenu(false)}
+>
+ About Us
+</NavLink>
 
-        <Link
-          to="/contact"
-          className={styles.mobileLink}
-          onClick={() => setMobileMenu(false)}
-        >
-          Contact
-        </Link>
+        <NavLink
+  to="/contact"
+  className={({ isActive }) =>
+    isActive
+      ? `${styles.mobileLink} ${styles.activeLink}`
+      : styles.mobileLink
+  }
+  onClick={() => setMobileMenu(false)}
+>
+  Contact
+</NavLink>
 
         
       </div>

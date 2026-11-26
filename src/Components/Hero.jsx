@@ -5,9 +5,9 @@ const slides = [
   {
     type: "video",
     src: "/hero/india.mp4",
-    title: "Mega Holiday Offer",
-    subtitle: "Get up to 25% Value Back",
-    price: "",
+    title: "Explore Incredible India",
+    subtitle: "Discover Amazing Destinations at the Best Price",
+   
   },
   
   {
@@ -15,46 +15,43 @@ const slides = [
     src: "/hero/nature.mp4",
     title: "Plan Your Perfect Trip Today",
     subtitle: "Where Every Stop Tells a Story",
-    price: "",
+  
   },
   {
     type: "video",
     src: "/hero/temple.mp4",
     title: "Plan ahead, Travel Stress-free",
-    subtitle: "FREE Rescheduling & Cancellation",
-    price: "",
+    subtitle: "Creating Memories That Last Forever",
+   
   },
   {
     type: "video",
     src: "/hero/tajmahal.mp4",
     title: "Your Dream Destination Awaits",
     subtitle: "Crafted Spiritual Experiences",
-    price: "",
+   
   },
   {
     type: "video",
     src: "/hero/world.mp4",
-    title: "Discover the World, One Journey at a Time",
-    subtitle:
-      "Explore breathtaking destinations, curated holiday packages, and unforgettable experiences designed just for you.",
-    price: "₹86,360",
+   title: "Discover the World, One Journey at a Time",
+subtitle: "Handpicked tours for unforgettable journeys.",
+price: "Customized Tours",
   },
   {
     type: "image",
     src: "/hero/banars.jpg",
     title: "Experience the Timeless Soul of Banaras",
-    subtitle:
-      "Walk through ancient ghats, witness the divine Ganga Aarti, and explore spiritual traditions that have lived for thousands of years.",
-    price: "",
+    subtitle: "Discover the spiritual heart of India's oldest living city.",
+   
   },
   {
-    type: "image",
-    src: "/hero/family.jpg",
-    title: "Travel Together, Stay Together, Enjoy Together",
-    subtitle:
-      "Enjoy comfortable stays, exciting destinations, and carefully planned tours perfect for every member of your family. ✨",
-    price: "₹33,960",
-  },
+  type: "image",
+  src: "/hero/family.jpg",
+  title: "Travel Together, Stay Together, Enjoy Together",
+  subtitle: "Create unforgettable family memories with every journey.",
+  price: "Family Special",
+},
 ];
 
 function Hero() {
@@ -107,7 +104,13 @@ function Hero() {
             <img src={slide.src} alt="" />
           ) : null}
 
-          <div className={styles.overlay}>
+        <div
+  className={`${styles.overlay}
+  ${index === 2 ? styles.templeOverlay : ""}
+  ${index === slides.length - 3 ? styles.thirdLastOverlay : ""}
+  ${index === slides.length - 2 ? styles.secondLastOverlay : ""}
+  ${index === slides.length - 1 ? styles.lastOverlay : ""}`}
+>
             <h1>{slide.title}</h1>
 
             <p>{slide.subtitle}</p>
@@ -126,7 +129,7 @@ function Hero() {
 
 <div className={styles.companyBanner}>
   <h2>PMY</h2>
-  <p>Plan My Yatraa</p>
+  <p>Plan My Yatra</p>
 </div>
 
       {/* PREV NEXT BUTTONS */}

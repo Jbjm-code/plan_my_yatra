@@ -10,7 +10,6 @@ const galleryImages = {
     "/package/dubai/img3.png",
     "/package/dubai/img1.png",
     "/package/dubai/img2.png",
-    
     "/package/dubai/img4.jpg",
   ],
 
@@ -85,10 +84,28 @@ useState({
   const admin =
     JSON.parse(localStorage.getItem("admin"));
 
+  const formatPrice = (price) => {
+  if (!price) return "";
+
+  const value = String(price);
+
+  // Agar number nahi hai (Coming Soon, Must Visit, etc.)
+  if (!/\d/.test(value)) {
+    return value;
+  }
+
+  const number = value.replace(/[^\d]/g, "");
+
+  return `₹ ${Number(number).toLocaleString("en-IN")}`;
+};
+
   useEffect(() => {
 
-    axios
-      .get(`https://localhost:7275/api/packages/${id}`)
+   
+ axios.get(
+  `https://api.planmyyatra.com/api/Packages/slug/${id}`
+)
+
       .then((res) => {
 
         setPkg(res.data);
@@ -119,14 +136,34 @@ useState({
 
   const handleSave = async () => {
     
+    if (!editData.title.trim()) {
+  alert("Title cannot be blank. Please fill it.");
+  return;
+}
+
+if (!editData.price.trim()) {
+  alert("Price cannot be blank. Please fill it.");
+  return;
+}
+
+if (editData.includes.some(x => !x.trim())) {
+  alert("Inclusion cannot be blank. Please fill it.");
+  return;
+}
+
+if (editData.exclusions.some(x => !x.trim())) {
+  alert("Exclusion cannot be blank. Please fill it.");
+  return;
+}
 
     try {
 
-      await axios.put(
-  `https://localhost:7275/api/packages/${pkg.id}`,
+   await axios.put(
+  `https://api.planmyyatra.com/api/Packages/${pkg.id}`,
   {
     title: editData.title,
     price: editData.price,
+    oldPrice: editData.oldPrice,
     inclusions: editData.includes,
     exclusions: editData.exclusions
   }
@@ -221,7 +258,7 @@ setShowSuccess(true);
     {editing ? (
 
       <input
-        className={styles.editInput}
+        className={styles.priceInput}
         value={editData.price}
         onChange={(e) =>
           setEditData({
@@ -233,7 +270,7 @@ setShowSuccess(true);
 
     ) : (
 
-      <h2>{pkg.price}</h2>
+   <h2>{formatPrice(pkg.price)}</h2>
 
     )}
 
@@ -342,7 +379,7 @@ setShowSuccess(true);
 
             ) : (
 
-              <h2>{pkg.price}</h2>
+             <h2>{formatPrice(pkg.price)}</h2>
 
             )}
 
@@ -373,8 +410,7 @@ onChange={(e) => {
 const updated =
 [...editData.includes];
 
-updated[i] =
-e.target.value;
+updated[i] = e.target.value;
 
 setEditData({
 ...editData,
@@ -414,8 +450,7 @@ onChange={(e) => {
 const updated =
 [...editData.exclusions];
 
-updated[i] =
-e.target.value;
+updated[i] = e.target.value;
 
 setEditData({
 ...editData,

@@ -143,7 +143,7 @@ const Login = ({ closeModal }) => {
       setLoading(true);
 
      const res = await fetch(
-  "https://localhost:7275/api/Admin/login",
+  "https://api.planmyyatra.com/api/Admin/login",
         {
           method: "POST",
 

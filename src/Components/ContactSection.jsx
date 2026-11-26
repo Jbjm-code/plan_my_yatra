@@ -13,6 +13,7 @@ function ContactSection() {
   });
 const [activeField, setActiveField] = useState("");
   const [errors, setErrors] = useState({});
+  const [showPopup, setShowPopup] = useState(false);
 const [touched, setTouched] = useState({});
 
 const handleBlur = (e) => {
@@ -25,109 +26,238 @@ const handleBlur = (e) => {
 };
   // ================= HANDLE CHANGE =================
   const handleChange = (e) => {
-    const { name, value } = e.target;
 
-    let newErrors = { ...errors };
+  const { name, value } = e.target;
 
-    // ✅ NAME VALIDATION
-    if (name === "firstName" || name === "lastName") {
-      if (!/^[a-zA-Z\s]*$/.test(value)) {
-        newErrors[name] = "Enter Valid Name";
-        
-        setErrors(newErrors);
-        return;
-      } else {
-        delete newErrors[name];
-      }
+  let errorMessage = "";
+
+  // FIRST NAME & LAST NAME
+  if (name === "firstName" || name === "lastName") {
+
+    if (!/^[A-Za-z\s]*$/.test(value)) {
+
+      setErrors({
+        ...errors,
+        [name]: "Enter valid name"
+      });
+
+      return;
+    }
+  }
+
+  // EMAIL
+  if (name === "email") {
+
+    const emailValue = value.replace(/\s/g, "");
+
+    if ((emailValue.match(/@/g) || []).length > 1) {
+
+      setErrors({
+        ...errors,
+        email: "Only one @ allowed"
+      });
+
+      return;
     }
 
-    // ✅ EMAIL VALIDATION (typing control)
-    if (name === "email") {
-      if (!/^[a-zA-Z0-9@._-]*$/.test(value)) {
-        newErrors.email = "Invalid character";
-        setErrors(newErrors);
-        return;
-      } else {
-        delete newErrors.email;
-      }
+    if (emailValue.includes("..")) {
+
+      setErrors({
+        ...errors,
+        email: "Enter valid email"
+      });
+
+      return;
     }
 
-    // ✅ MESSAGE LIMIT
-    if (name === "message") {
-      if (value.length > 200) {
-        newErrors.message = "Max 200 characters allowed";
-        setErrors(newErrors);
-        return;
-      } else {
-        delete newErrors.message;
-      }
+    if (!/^[A-Za-z0-9@._-]*$/.test(emailValue)) {
+
+      setErrors({
+        ...errors,
+        email: "Invalid email"
+      });
+
+      return;
+    }
+  }
+
+  // MESSAGE
+  if (name === "message") {
+
+    if (value.length > 200) {
+
+      setErrors({
+        ...errors,
+        message: "Maximum 200 characters allowed"
+      });
+
+      return;
     }
 
-    setFormData({ ...formData, [name]: value });
-    setErrors(newErrors);
-  };
-
-  // ================= VALIDATE =================
-  const validate = () => {
-    let newErrors = {};
-
-    // Name
-    if (!formData.firstName.trim()) {
-      newErrors.firstName = "First name is required";
+    if (value.length >= 200) {
+      errorMessage = "Maximum 200 characters reached";
     }
+  }
 
-    if (!formData.lastName.trim()) {
-      newErrors.lastName = "Last name is required";
-    }
+  setFormData({
+    ...formData,
+    [name]: value
+  });
 
-    // Email
-    const email = formData.email;
+  setErrors({
+    ...errors,
+    [name]: errorMessage
+  });
+};
 
-    if (!email) {
-      newErrors.email = "Email is required";
-    } else {
 
-      // only valid chars
-      if (!/^[a-zA-Z0-9@._-]+$/.test(email)) {
-        newErrors.email = "Invalid character";
-      }
+// ================= VALIDATE =================
 
-      // only ONE @
-      const atCount = (email.match(/@/g) || []).length;
-      if (atCount !== 1) {
-        newErrors.email = "Only one @ required";
-      }
+const validate = () => {
 
-      // only ONE .
-      const dotCount = (email.match(/\./g) || []).length;
-      if (dotCount !== 1) {
-        newErrors.email = "Only one dot (.) required";
-      }
+  let newErrors = {};
 
-      // final format
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        newErrors.email = "Enter valid email (example@gmail.com)";
-      }
-    }
+  // First Name
+  if (!formData.firstName.trim()) {
 
-    // Message
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    }
+    newErrors.firstName = "First name is required";
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+  } else if (!/^[A-Za-z\s]+$/.test(formData.firstName)) {
+
+    newErrors.firstName = "Enter valid first name";
+  }
+
+  // Last Name
+  if (!formData.lastName.trim()) {
+
+    newErrors.lastName = "Last name is required";
+
+  } else if (!/^[A-Za-z\s]+$/.test(formData.lastName)) {
+
+    newErrors.lastName = "Enter valid last name";
+  }
+
+  // Email
+  if (!formData.email.trim()) {
+
+    newErrors.email = "Email is required";
+
+  } else if (
+    !/^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}$/.test(
+      formData.email
+    )
+  ) {
+
+    newErrors.email = "Enter valid email";
+  }
+
+  // Subject
+  if (!formData.subject.trim()) {
+
+    newErrors.subject = "Subject is required";
+  }
+
+  // Message
+  if (!formData.message.trim()) {
+
+    newErrors.message = "Message is required";
+
+  } else if (formData.message.length > 200) {
+
+    newErrors.message =
+      "Maximum 200 characters allowed";
+  }
+
+  setErrors(newErrors);
+
+  return Object.keys(newErrors).length === 0;
+};
+
+
+const resetForm = () => {
+
+  setFormData({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+
+  setErrors({});
+};
+
+const handleWhatsApp = () => {
+
+  const text = encodeURIComponent(
+`Name: ${formData.firstName} ${formData.lastName}
+
+Email: ${formData.email}
+
+Subject: ${formData.subject}
+
+Message:
+${formData.message}`
+  );
+
+  window.open(
+    `https://wa.me/919067777990?text=${text}`,
+    "_blank"
+  );
+
+  resetForm();
+  setShowPopup(false);
+};
+
+const handleEmail = () => {
+
+  const subject = encodeURIComponent(
+    formData.subject
+  );
+
+  const body = encodeURIComponent(
+`Name: ${formData.firstName} ${formData.lastName}
+
+Email: ${formData.email}
+
+Message:
+${formData.message}`
+  );
+
+  const isMobile =
+    /Android|iPhone|iPad|iPod/i.test(
+      navigator.userAgent
+    );
+
+  if (isMobile) {
+
+    window.location.href =
+      `mailto:planmyyatraa@gmail.com?subject=${subject}&body=${body}`;
+
+  } else {
+
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=planmyyatraa@gmail.com&su=${subject}&body=${body}`,
+      "_blank"
+    );
+
+  }
+
+  resetForm();
+  setShowPopup(false);
+};
 
   // ================= SUBMIT =================
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = (e) => {
 
-    if (validate()) {
-      console.log("Form Submitted", formData);
-    }
-  };
+  e.preventDefault();
+
+  if (validate()) {
+
+    setShowPopup(true);
+
+  }
+};
 
   // ================= UI =================
   return (
@@ -153,19 +283,19 @@ const handleBlur = (e) => {
           <div className={styles.card}>
             <MapPin className={styles.icon} />
             <h4>Location</h4>
-            <p>Aurangabad, Maharashtra</p>
+            <p>Karve Road, Pune</p>
           </div>
 
           <div className={styles.card}>
             <Phone className={styles.icon} />
             <h4>Phone</h4>
-            <p>+91 9876543210</p>
+            <p>+91 9067777990</p>
           </div>
 
           <div className={styles.card}>
             <Mail className={styles.icon} />
             <h4>Email</h4>
-            <p>travel@gmail.com</p>
+            <p>planmyyatraa@gmail.com</p>
           </div>
         </div>
 
@@ -227,6 +357,11 @@ const handleBlur = (e) => {
                 onChange={handleChange}
                 onBlur={handleBlur} 
               />
+              {errors.subject && (
+  <p className={styles.error}>
+    {errors.subject}
+  </p>
+)}
 
               <div>
                 <textarea
@@ -248,12 +383,59 @@ const handleBlur = (e) => {
         {/* MAP */}
         <div className={styles.map}>
           <iframe
-            src="https://maps.google.com/maps?q=Aurangabad&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            src="https://www.google.com/maps?q=Karve+Road,+Pune,+Maharashtra&output=embed"
             loading="lazy"
           ></iframe>
         </div>
 
       </div>
+
+      {showPopup && (
+
+<div className={styles.popupOverlay}>
+
+  <div className={styles.popupBox}>
+
+    <div className={styles.popupIcon}>
+      ✔
+    </div>
+
+    <h3>Contact Options</h3>
+
+    <p>
+      Choose where you want to send message
+    </p>
+
+    <div className={styles.popupButtons}>
+
+      <button
+        className={styles.whatsappBtn}
+        onClick={handleWhatsApp}
+      >
+        WhatsApp
+      </button>
+
+      <button
+        className={styles.emailBtn}
+        onClick={handleEmail}
+      >
+        Email
+      </button>
+
+      <button
+        className={styles.cancelBtn}
+        onClick={() => setShowPopup(false)}
+      >
+        Cancel
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+)}
     </section>
   );
 }

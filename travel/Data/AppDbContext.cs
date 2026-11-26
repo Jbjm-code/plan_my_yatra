@@ -17,8 +17,6 @@ namespace travel.Data
 
         public DbSet<Package> Packages { get; set; }
 
-        public DbSet<PackageDetail> PackageDetails { get; set; }
-
         public DbSet<TravelPackagePoint> TravelPackagePoints { get; set; }
 
         // New Travel Package Tables
@@ -45,8 +43,6 @@ namespace travel.Data
             modelBuilder.Entity<Package>()
                 .ToTable("packages");
 
-            modelBuilder.Entity<PackageDetail>()
-                .ToTable("package_details");
 
             modelBuilder.Entity<TravelPackagePoint>()
                 .ToTable("package_points");

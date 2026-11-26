@@ -13,8 +13,9 @@ const AdminVerifyOtp = () => {
 
   const location = useLocation();
 
-  const adminId =
-    location.state?.adminId;
+const adminId =
+  location.state?.adminId ||
+  localStorage.getItem("resetAdminId");
 
   const [otp, setOtp] =
     useState("");
@@ -29,22 +30,19 @@ const AdminVerifyOtp = () => {
     try {
 
       const res = await fetch(
-        "http://localhost:5048/api/Admin/verify-otp",
-        {
-          method: "POST",
-
-          headers: {
-            "Content-Type":
-              "application/json"
-          },
-
-          body: JSON.stringify({
-            adminId,
-            otp
-          })
-
-        }
-      );
+  "https://api.planmyyatra.com/api/Admin/verify-otp",
+  {
+    method: "POST",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      adminId: Number(adminId),
+      otp: otp.trim()
+    })
+  }
+);
 
       const data = await res.json();
 

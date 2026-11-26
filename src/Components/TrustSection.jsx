@@ -13,7 +13,7 @@ const trustData = [
   },
   {
     title: "Memorable Experiences",
-    desc: "Join the SOTC family – Over 5 million customers have created their most memorable Experiences with us",
+    desc: "Join the family – Over 5 million customers have created their most memorable Experiences with us",
     icon: "/icons/umbrela.png",
   },
   {

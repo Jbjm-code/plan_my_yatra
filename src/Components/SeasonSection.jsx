@@ -1,6 +1,8 @@
-import { useRef, useState } from "react";
+
 import styles from "../Styles/SeasonSection.module.css";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import axios from "axios";
 
 const seasonData = {
   summer: {
@@ -8,38 +10,48 @@ const seasonData = {
     text: "Feel the summer vibes with our exclusive holiday packages!",
     desc: "Enjoy beaches, city escapes and sunshine adventures.",
     packages: [
-      {
-        title: "Bali Escape",
-        id: "bali",
+       {
+        title: "Kashmir",
+        id: "kashmir-delight",
         days: "5 Days",
-        price: "₹ 26,900",
-        oldPrice: "₹ 32,000",
-        image: "/recommonded/bali.png",
+        price: "Coming Soon",
+        oldPrice: "Must Visit",
+        image: "/season/manali.jpg",
       },
+       {
+        title: "Kashmir Paradise",
+        id: "kashmir-tour",
+        days: "6 Days",
+        price: "Coming Soon",
+        oldPrice: "Must Visit",
+        image: "/season/kashmir.jpg",
+      },
+        {
+        title: "Ooty Kodaikanal",
+        id: "ooty-kodaikanal-hills",
+        days: "7 Days",
+        price: "Coming Soon",
+        oldPrice: "Must Visit",
+        image: "/regions/south/ooty2.jpg",
+      },
+     
       {
-        title: "Dubai Tour",
-        id: "dubai",
-        days: "4 Days",
-        price: "₹ 45,000",
-        oldPrice: "₹ 52,000",
-        image: "/recommonded/dubai.png",
-      },
-      {
-        title: "Goa Trip",
-        id: "goa-getaway",
-        days: "3 Days",
-        price: "₹ 15,000",
-        oldPrice: "₹ 18,000",
-        image: "/season/goa.jpg",
-      },
-      {
-        title: "Thailand",
-        id: "thailand",
-        days: "5 Days",
-        price: "₹ 39,000",
-        oldPrice: "₹ 45,000",
-        image: "/recommonded/thailand.png",
-      },
+      title: "Uttarakhand Nature Trail",
+      id: "uttarakhand-nature-trail",
+      days: "7 Days",
+      price: "Coming Soon",
+        oldPrice: "Must Visit",
+      image: "/regions/north/utt/hero.jpg",
+    },
+     {
+      title: "Classic Sikkim Darjeeling",
+      id: "classic-sikkim-darjeeling",
+      days: "6 Days",
+     price: "Coming Soon",
+        oldPrice: "Must Visit",
+      image: "/regions/east/sikkim1/img6.jpg",
+    },
+     
     ],
   },
 
@@ -48,38 +60,48 @@ const seasonData = {
     text: "Enjoy magical winter destinations and snowfall!",
     desc: "Explore snowy mountains and cozy stays.",
     packages: [
-      {
-        title: "Kashmir",
-        id: "kashmir-delight",
-        days: "5 Days",
-        price: "₹ 18,000",
-        oldPrice: "₹ 22,000",
-        image: "/season/manali.jpg",
+     
+       {
+        title: "Kerala complete",
+        id: "kerala-complete",
+        days: "3 Days",
+       price: "Coming Soon",
+        oldPrice: "Must Visit",
+        image: "/regions/south/kerala.png",
       },
       {
-        title: "Kashmir Paradise",
-        id: "kashmir-tour",
+        title: "Kerala Monsoon",
+        id: "kerala-delight",
         days: "6 Days",
-        price: "₹ 25,000",
-        oldPrice: "₹ 30,000",
-        image: "/season/kashmir.jpg",
+       price: "Coming Soon",
+        oldPrice: "Must Visit",
+        image: "/season/kerala.png",
       },
-      {
-        title: "Aasam Meghalaya",
-        id: "assam-meghalaya-explorer",
+       {
+        title: "Dubai Tour",
+        id: "dubai",
         days: "4 Days",
-        price: "₹ 20,000",
-        oldPrice: "₹ 26,000",
-        image: "/season/auli.jpg",
+        price: "Coming Soon",
+        oldPrice: "Must Visit",
+        image: "/recommonded/dubai.png",
       },
+       {
+        title: "Thailand",
+        id: "thailand",
+        days: "5 Days",
+        price: "Coming Soon",
+        oldPrice: "Must Visit",
+        image: "/recommonded/thailand.png",
+      },
+    
       {
-        title: "Ooty Kodaikanal",
-        id: "ooty-kodaikanal-hills",
-        days: "7 Days",
-        price: "₹ 1,20,000",
-        oldPrice: "₹ 1,40,000",
-        image: "/regions/south/ooty2.jpg",
-      },
+      title: "Royal Rajasthan",
+      id: "royal-rajasthan",
+      days: "7 Days",
+      price: "Coming Soon",
+        oldPrice: "Must Visit",
+      image: "/regions/north/rajasthan/day2.jpg",
+    },
     ],
   },
 
@@ -88,43 +110,46 @@ const seasonData = {
     text: "Romantic monsoon getaways with lush greenery!",
     desc: "Enjoy waterfalls, hills and fresh nature.",
     packages: [
-      {
-        title: "Kerala Monsoon",
-        id: "kerala-delight",
-        days: "6 Days",
-        price: "₹ 28,000",
-        oldPrice: "₹ 34,000",
-        image: "/season/kerala.png",
-      },
+      
       {
         title: "Meghalaya Tour",
         id: "meghalaya-escape",
         days: "5 Days",
-        price: "₹ 30,000",
-        oldPrice: "₹ 36,000",
+         price: "Coming Soon",
+        oldPrice: "Must Visit",
         image: "/season/meghalaya.jpg",
       },
       {
         title: "Coorg Hills",
         id: "coorg-ooty-escape",
         days: "4 Days",
-        price: "₹ 18,500",
-        oldPrice: "₹ 22,000",
+       price: "Coming Soon",
+        oldPrice: "Must Visit",
         image: "/season/coora.png",
       },
-      {
-        title: "Kerala complete",
-        id: "kerala-complete",
-        days: "3 Days",
-        price: "₹ 12,000",
-        oldPrice: "₹ 15,000",
-        image: "/regions/south/kerala.png",
+    
+         {
+      title: "Ultimate Ladakh",
+      id: "ultimate-ladakh",
+      days: "8 Days",
+      price: "Coming Soon",
+        oldPrice: "Must Visit",
+      image: "/regions/north/ladakh/hero.jpg",
+    },
+       {
+        title: "Bali Escape",
+        id: "bali",
+        days: "5 Days",
+       price: "Coming Soon",
+        oldPrice: "Must Visit",
+        image: "/recommonded/bali.png",
       },
     ],
   },
 };
 
 function SeasonSection() {
+  const [recommendedPackages, setRecommendedPackages] = useState([]);
   const [active, setActive] = useState("summer");
   const scrollRef = useRef(null);
 const navigate = useNavigate();
@@ -143,6 +168,21 @@ const navigate = useNavigate();
       behavior: "smooth",
     });
   };
+
+  const getUpdatedPackage = (slug) => {
+  return recommendedPackages.find(
+    (pkg) => pkg.slug === slug
+  );
+};
+
+  useEffect(() => {
+  axios
+    .get("https://api.planmyyatra.com/api/packages")
+    .then((res) => {
+      setRecommendedPackages(res.data);
+    })
+    .catch((err) => console.log(err));
+}, []);
 
   return (
     <section className={styles.wrapper}>
@@ -222,10 +262,12 @@ const navigate = useNavigate();
                   <img src={item.image} alt="" />
 
                  <div className={styles.topRow}>
-  <h4>{item.title}</h4>
+  <h4>
+  {getUpdatedPackage(item.id)?.title || item.title}
+</h4>
 
   <span className={styles.oldPrice}>
-    {item.oldPrice}
+   {getUpdatedPackage(item.id)?.oldPrice || item.oldPrice}
   </span>
 </div>
 
@@ -235,7 +277,7 @@ const navigate = useNavigate();
   </span>
 
   <strong className={styles.newPrice}>
-    {item.price}
+   {getUpdatedPackage(item.id)?.price || item.price}
   </strong>
 </div>
                 </div>

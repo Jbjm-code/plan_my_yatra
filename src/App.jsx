@@ -19,13 +19,14 @@ import AboutUs from "./Components/AboutUs";
 import AdminVerifyOtp from "./Components/AdminVerifyOtp";
 import AdminProfile from "./Components/AdminProfile";
 import AdminResetPassword from "./Components/AdminResetPassword";
+import ScrollToTop from "./Components/ScrollToTop";
 
 
 function App() {
   return (
     <>
         <Navbar />
-
+<ScrollToTop />
       <Routes>
 
         {/* HOME PAGE */}

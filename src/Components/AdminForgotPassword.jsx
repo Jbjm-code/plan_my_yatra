@@ -16,37 +16,41 @@ const AdminForgotPassword = () => {
 
     try {
 
-      const res = await fetch(
-        "http://localhost:5048/api/Admin/send-otp",
-        {
-          method: "POST",
-
-          headers: {
-            "Content-Type": "application/json"
-          },
-
-          body: JSON.stringify({ email })
-
-        }
-      );
+     const res = await fetch(
+  "https://api.planmyyatra.com/api/Admin/send-otp",
+  {
+    method: "POST",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      email: email.trim()
+    })
+  }
+);
 
       const data = await res.json();
 
       if (res.ok) {
 
-        setMessage("OTP sent successfully");
+  localStorage.setItem(
+    "resetAdminId",
+    data.adminId
+  );
 
-        setTimeout(() => {
+  setMessage("OTP sent successfully");
 
-          navigate("/admin-verify-otp", {
-            state: {
-              adminId: data.adminId
-            }
-          });
+  setTimeout(() => {
 
-        }, 1000);
-
+    navigate("/admin-verify-otp", {
+      state: {
+        adminId: data.adminId
       }
+    });
+
+  }, 1000);
+}
 
       else {
 

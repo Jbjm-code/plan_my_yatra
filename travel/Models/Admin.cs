@@ -11,5 +11,9 @@
         public string name { get; set; }
 
         public string mobile { get; set; }
+
+        public string? Otp { get; set; }
+
+        public DateTime? OtpExpiry { get; set; }
     }
 }

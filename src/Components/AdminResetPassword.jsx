@@ -44,7 +44,7 @@ const AdminResetPassword = () => {
     try {
 
       const res = await fetch(
-        "http://localhost:5048/api/Admin/reset-password",
+        "https://api.planmyyatra.com/api/Admin/reset-password",
         {
           method: "POST",
 

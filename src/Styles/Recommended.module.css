@@ -240,7 +240,6 @@ font-family:
 
   color: #000000;
 
-  text-decoration: line-through;
 margin-right: 20px;
   margin-top: 8px;
 }
@@ -272,7 +271,6 @@ margin-right: 20px;
 }
 
 /* CARD */
-
 .card {
 
   width: 290px;
@@ -294,11 +292,13 @@ margin-right: 20px;
   display: flex;
   flex-direction: column;
 
-  padding-bottom: 1px;
+  padding-bottom: 15px;
 }
+
 /* TABLET */
 
 @media (max-width: 768px) {
+  
 
   .card {
     min-width: 240px;
@@ -358,7 +358,6 @@ margin-right: 20px;
     font-size: 14px;
   }
 }
-
 .editActions {
 
   display: flex;
@@ -369,9 +368,10 @@ margin-right: 20px;
 
   gap: 30px;
 
-  padding: 10px 10px 10px;
-}
+  margin-top: auto;
 
+  padding: 18px 10px 0;
+}
 .editBtn,
 .saveBtn,
 .cancelBtn {
@@ -471,4 +471,9 @@ margin-right: 20px;
   justify-content: center;
 
   gap: 12px;
+}
+.editInput::placeholder,
+.editPriceInput::placeholder {
+  color: #333333;
+  font-size: 13px;
 }

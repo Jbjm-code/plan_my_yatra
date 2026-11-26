@@ -1,12 +1,12 @@
 .wrapper {
   text-align: center;
-  padding: 30px 20px;
+  padding: 30px 60px;
   background: #f9fafb;
 }
 
 .smallTitle {
-  color: #6ea26e;
-  font-size: 14px;
+  color: #1e5f1e;
+  font-size: 18px;
   font-weight: 600;
   font-family:
   "Playfair Display",
@@ -77,13 +77,37 @@
 }
 
 .content span {
+  display: block;
   font-size: 13px;
   color: #888;
 }
 
+/* =========================
+   STAR RATING
+========================= */
+
+.stars {
+  margin-top: 7px;
+  margin-bottom: 2px;
+
+  color: #f0ec03;
+
+  font-size: 20px;
+
+  letter-spacing: 2px;
+
+  line-height: 1;
+}
+
+/* =========================
+   REVIEW TEXT
+========================= */
+
 .content p {
   margin-top: 10px;
+
   font-size: 14px;
+
   color: #555;
 }
 
@@ -105,7 +129,7 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  border: 1px solid #ddd;
+  border: 1px solid #0e850e;
   background: white;
   cursor: pointer;
   font-size: 18px;
@@ -113,11 +137,13 @@
 }
 
 .left {
-  left: -10px;
+  left: 1px;
+  color: #0e850e;
 }
 
 .right {
-  right: -10px;
+  right: 1px;
+   color: #0e850e;
 }
 
 /* TABLET (2 CARDS) */

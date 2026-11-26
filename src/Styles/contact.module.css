@@ -69,6 +69,10 @@
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(238, 127, 127, 0.582);
 }
+
+.card p{
+  font-size: 14px;
+}
 .error {
   color: rgb(0, 0, 0);
   font-size: 12px;
@@ -191,4 +195,62 @@ button {
   .hero {
     height: 250px;
   }
+}
+
+.popupOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.popupBox{
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  width:320px;
+  text-align:center;
+}
+
+.popupIcon{
+  font-size:40px;
+  color:green;
+  margin-bottom:10px;
+}
+
+.popupButtons{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:20px;
+}
+
+.whatsappBtn{
+  background:#25D366;
+  color:white;
+  border:none;
+  padding:12px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.emailBtn{
+  background:#4285F4;
+  color:white;
+  border:none;
+  padding:12px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.cancelBtn{
+  background:#666;
+  color:white;
+  border:none;
+  padding:12px;
+  border-radius:6px;
+  cursor:pointer;
 }

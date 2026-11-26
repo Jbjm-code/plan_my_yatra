@@ -33,12 +33,18 @@ useState(false);
 const [showSuccess,setShowSuccess] =
 useState(false);
 
+console.log(
+"Package Name =",
+JSON.stringify(editData?.package_name)
+);
+
   const data = packagesData[id];
   const [dbData, setDbData] = useState(null);
 
 useEffect(() => {
-  axios
-    .get(`https://localhost:7275/api/travel-package/${id}`)
+ axios.get(
+  `https://api.planmyyatra.com/api/travel-package/${id}`
+)
     .then((res) => {
       setDbData(res.data);
     })
@@ -51,7 +57,10 @@ useEffect(() => {
 
   if(dbData){
 
-    setEditData(dbData);
+   setEditData({
+...dbData,
+package_name: dbData.package_name ?? ""
+});
 
   }
 
@@ -61,10 +70,23 @@ const handleSave = async () => {
 
   try {
 
-    await axios.put(
-      `https://localhost:7275/api/travel-package/${id}`,
-      editData
-    );
+const payload = {
+  ...editData,
+  inclusions: editData.inclusions.filter(
+    x => x.item_text.trim() !== ""
+  ),
+  exclusions: editData.exclusions.filter(
+    x => x.item_text.trim() !== ""
+  ),
+  notes: editData.notes.filter(
+    x => x.note_text.trim() !== ""
+  )
+};
+
+await axios.put(
+  `https://api.planmyyatra.com/api/travel-package/${id}`,
+  payload
+);
 
     setDbData(editData);
 
@@ -73,13 +95,17 @@ const handleSave = async () => {
   setShowSuccess(true);
 
   }
-  catch (err) {
+ catch (err) {
 
-    console.log(err);
+  console.log("FULL ERROR", err);
 
-    alert("Update Failed");
+  console.log("RESPONSE", err.response);
 
-  }
+  console.log("DATA", err.response?.data);
+
+  alert("Update Failed");
+
+}
 
 };
 
@@ -112,7 +138,8 @@ const handleSave = async () => {
 editing ?
 
 <input
-value={editData.package_name}
+value={editData.package_name?.trimStart() ?? ""}
+placeholder="Package Title"
 onChange={(e)=>
 setEditData({
 ...editData,
@@ -132,6 +159,7 @@ editing ?
 
 <textarea
 value={editData.subtitle}
+placeholder="Package Subtitle"
 onChange={(e)=>
 setEditData({
 ...editData,
@@ -199,6 +227,7 @@ editing ?
 
 <input
 value={editData.duration}
+placeholder="Duration"
 onChange={(e)=>
 setEditData({
 ...editData,
@@ -221,6 +250,7 @@ editing ?
 
 <input
 value={editData.cities_covered}
+placeholder="Cities Covered"
 onChange={(e)=>
 setEditData({
 ...editData,
@@ -243,6 +273,7 @@ editing ?
 
 <input
 value={editData.ideal_for}
+placeholder="Ideal For"
 onChange={(e)=>
 setEditData({
 ...editData,
@@ -265,6 +296,7 @@ editing ?
 
 <input
 value={editData.pricing}
+placeholder="Pricing"
 onChange={(e)=>
 setEditData({
 ...editData,
@@ -332,12 +364,13 @@ editing ?
 <input
 type="number"
 value={item.day_no}
+placeholder="Day No"
 onChange={(e)=>{
 
 const updated=[...editData.itinerary];
 
 updated[index].day_no =
-e.target.value;
+parseInt(e.target.value);
 
 setEditData({
 ...editData,
@@ -360,6 +393,7 @@ editing ?
 
 <input
 value={item.day_title}
+placeholder="Day Title"
 onChange={(e) => {
 
 const updated =
@@ -381,12 +415,37 @@ itinerary: updated
 <h3>{item.day_title}</h3>
 
 }
+{
+editing ?
 
+<input
+value={item.day_subtitle}
+placeholder="Day Subtitle"
+onChange={(e)=>{
+
+const updated=[...editData.itinerary];
+
+updated[index].day_subtitle=e.target.value;
+
+setEditData({
+...editData,
+itinerary:updated
+});
+
+}}
+/>
+
+:
+
+<h5>{item.day_subtitle}</h5>
+
+}
 {
 editing ?
 
 <textarea
 value={item.day_description}
+placeholder="Day Description"
 onChange={(e) => {
 
 const updated =
@@ -423,14 +482,22 @@ editing ?
 
 <input
 key={index}
-value={item}
+value={item.item_text}
+placeholder="Package Inclusion"
 onChange={(e)=>{
 
 const updated =
 [...editData.inclusions];
 
-updated[index] =
-e.target.value;
+updated[index]={
+    ...updated[index],
+    item_text:e.target.value
+};
+
+setEditData({
+    ...editData,
+    inclusions:updated
+});
 
 setEditData({
 ...editData,
@@ -443,7 +510,7 @@ inclusions: updated
 :
 
 <p key={index}>
-✔ {item}
+✔ {item.item_text}
 </p>
 
 ))}
@@ -458,14 +525,17 @@ editing ?
 
 <input
 key={index}
-value={item}
+value={item.item_text}
+placeholder="Package Exclusion"
 onChange={(e)=>{
 
 const updated =
 [...editData.exclusions];
 
-updated[index] =
-e.target.value;
+updated[index]={
+    ...updated[index],
+    item_text:e.target.value
+};
 
 setEditData({
 ...editData,
@@ -478,7 +548,7 @@ exclusions: updated
 :
 
 <p key={index}>
-✘ {item}
+✘ {item.item_text}
 </p>
 
 ))}
@@ -518,14 +588,22 @@ editing ?
 
 <textarea
 key={index}
-value={item}
+value={item.note_text}
+placeholder="Important Note"
 onChange={(e)=>{
 
 const updated =
 [...editData.notes];
 
-updated[index] =
-e.target.value;
+updated[index]={
+    ...updated[index],
+    note_text:e.target.value
+};
+
+setEditData({
+    ...editData,
+    notes:updated
+});
 
 setEditData({
 ...editData,
@@ -538,7 +616,7 @@ notes: updated
 :
 
 <p key={index}>
-• {item}
+• {item.note_text}
 </p>
 
 ))}
@@ -564,7 +642,7 @@ notes: updated
 
             <div className={styles.bookingSection}>
         <h2>
-          Ready To Explore Kashmir?
+          Ready To Explore With Us?
         </h2>
 
         <p>
@@ -664,10 +742,8 @@ Changes Saved Successfully
 </p>
 
 <button
-className={styles.saveBtn}
-onClick={() =>
-setShowSuccess(false)
-}
+className={`${styles.saveBtn} ${styles.successBtn}`}
+onClick={() => setShowSuccess(false)}
 >
 OK
 </button>

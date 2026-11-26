@@ -9,7 +9,7 @@
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 10px;
-   font-family: "Playfair Display", serif;
+   font-family: "Times New Roman", Times, serif;
 }
 
 .header p {
@@ -69,7 +69,7 @@
 .card h4 {
   font-size: 18px;
   margin-top: 14px;
-   font-family: "Playfair Display", serif;
+   font-family: "Times New Roman", Times, serif;
 }
 
 /* PRICE */
@@ -96,7 +96,7 @@
 
   border-radius: 50%;
 
-  border: 1px solid #ccc;
+  border: 1px solid #dd1717;
   background: white;
 
   cursor: pointer;
@@ -106,10 +106,12 @@
 
 .leftArrow {
   left: -22px;
+  color: red;
 }
 
 .rightArrow {
   right: -22px;
+  color: red;
 }
 
 /* TABLET */

@@ -1,62 +1,121 @@
 import styles from "../Styles/Footer.module.css";
-import { Link } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+} from "react-router-dom";
+
+import {
+  FaCheckCircle,
+  FaSuitcaseRolling,
+  FaTags,
+  FaHeadset,
+  FaClock,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaWhatsapp,
+  FaChevronRight,
+} from "react-icons/fa";
+
 function Footer() {
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLogoClick = () => {
+
+    if (location.pathname === "/") {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+    } else {
+
+      navigate("/");
+
+      setTimeout(() => {
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+
+      }, 100);
+
+    }
+
+  };
+
   return (
+
     <footer className={styles.footerWrapper}>
 
-      {/* TOP CTA STRIP */}
-
-      <div className={styles.ctaStrip}>
-        <div className={styles.ctaLeft}>
-          <img src="/footer/travel.png" alt="icon" />
-
-          <div>
-            <h3>Ready To Explore And Enjoy Your Journey?</h3>
-            <p>
-              Discover amazing destinations with perfectly crafted travel experiences.
-            </p>
-          </div>
-        </div>
-
-        <button className={styles.ctaBtn}>
-          Get Started →
-        </button>
-      </div>
-
-
+      {/* ========================= */}
       {/* MAIN FOOTER */}
+      {/* ========================= */}
 
       <div className={styles.footerContent}>
 
+        {/* =================================== */}
+        {/* COLUMN 1 */}
+        {/* =================================== */}
 
-        {/* NEWSLETTER */}
-
-        <div className={styles.newsletterSection}>
-
-          {/* LOGO */}
+        <div className={styles.leftSection}>
 
           <img
-            src="/logo.png"
-            alt="logo"
+            src="/logo2.png"
+            alt="Plan My Yatraa"
             className={styles.footerLogo}
+            onClick={handleLogoClick}
           />
 
-          <h4>Newsletter</h4>
+          {/* Gallery Below Logo */}
 
-          <div className={styles.inputBox}>
-            <input placeholder="Enter Email Address" />
-            <button>➤</button>
+          <div className={styles.galleryGrid}>
+
+            <img
+              src="/footer/uttrakhand.jpg"
+              alt=""
+            />
+
+            <img
+              src="/footer/kashmir.jpg"
+              alt=""
+            />
+
+            <img
+              src="/footer/delhi.jpg"
+              alt=""
+            />
+
+            <img
+              src="/footer/himachal.jpg"
+              alt=""
+            />
+
+            <img
+              src="/footer/ladakh.jpg"
+              alt=""
+            />
+
+            <img
+              src="/footer/rajasthan.jpg"
+              alt=""
+            />
+
           </div>
-
-          <label className={styles.checkbox}>
-            <input type="checkbox" />
-            I agree to the Privacy Policy
-          </label>
 
         </div>
 
-
-        {/* BRAND INFO */}
+        {/* =================================== */}
+        {/* COLUMN 2 */}
+        {/* =================================== */}
 
         <div className={styles.linksSection}>
 
@@ -66,79 +125,127 @@ function Footer() {
             Turning your travel dreams into unforgettable journeys.
           </p>
 
-          <a href="mailto:info@traveltour.com">
-            info@traveltour.com
+          <a href="mailto:planmyyatraa@gmail.com">
+
+            <FaEnvelope />
+
+            <span>
+              planmyyatraa@gmail.com
+            </span>
+
           </a>
 
-          <a href="tel:+919876543210">
-            +91 9876543210
+          <a href="tel:+919067777990">
+
+            <FaPhoneAlt />
+
+            <span>
+              +91 9067777990
+            </span>
+
           </a>
 
           <a>
-            Mumbai, India
+
+            <FaMapMarkerAlt />
+
+            <span>
+              Karve Road, Pune
+            </span>
+
           </a>
 
         </div>
 
-
-        {/* PAGE LINKS */}
+        {/* =================================== */}
+        {/* COLUMN 3 */}
+        {/* =================================== */}
 
         <div className={styles.linksSection}>
 
-          <h4>View Our Pages</h4>
+          <h4>
+            View Our Pages
+          </h4>
 
-          {/* Scroll to Contact Section */}
+          <Link to="/">
+            <FaChevronRight />
+            Home
+          </Link>
 
-          <Link to="/contact">Contact</Link>
+          <Link to="/about">
+            <FaChevronRight />
+            About Us
+          </Link>
 
-          <a href="#">
-            Explore More
-          </a>
-
-          <a href="#">
-            Who We Are
-          </a>
-
-          <a href="#">
-            Travel Packages
-          </a>
-
-          <a href="#">
-            Journey Gallery
-          </a>
+          <Link to="/contact">
+            <FaChevronRight />
+            Contact
+          </Link>
 
         </div>
 
+        {/* =================================== */}
+        {/* COLUMN 4 */}
+        {/* =================================== */}
 
-        {/* GALLERY */}
+        <div className={styles.socialSection}>
 
-        <div className={styles.gallerySection}>
+          <h4>
+            Connect With Us
+          </h4>
 
-          <h4>Gallery</h4>
+          <p>
+            Follow us on social media for travel deals,
+            destination updates and exciting offers.
+          </p>
 
-          <div className={styles.galleryGrid}>
-            <img src="/footer/uttrakhand.jpg" alt="gallery" />
-            <img src="/footer/kashmir.jpg" alt="gallery" />
-            <img src="/footer/delhi.jpg" alt="gallery" />
-            <img src="/footer/himachal.jpg" alt="gallery" />
-            <img src="/footer/ladakh.jpg" alt="gallery" />
-            <img src="/footer/rajasthan.jpg" alt="gallery" />
+          <div className={styles.socialIcons}>
+
+            <a
+  href="https://www.facebook.com/PMYTours"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <FaFacebookF />
+</a>
+
+          <a
+  href="https://www.instagram.com/plan_my_yatra/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <FaInstagram />
+</a>
+
+
+            <a
+  href="https://wa.me/919067777990"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <FaWhatsapp />
+</a>
+
           </div>
 
         </div>
 
-
       </div>
 
-
+      {/* ========================= */}
       {/* COPYRIGHT */}
+      {/* ========================= */}
 
-      <div className={styles.bottomBar}>
-        © 2026 TravelTour. All Rights Reserved.
-      </div>
+    <div className={styles.bottomBar}>
+
+  © {new Date().getFullYear()} <strong>Plan My Yatra</strong>. All Rights Reserved.
+
+</div>
 
     </footer>
+
   );
+
 }
 
 export default Footer;

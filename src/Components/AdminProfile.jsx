@@ -2,8 +2,9 @@ import React, {
   useEffect,
   useState
 } from "react";
-
+import { useNavigate } from "react-router-dom";
 import styles from "../Styles/adminProfile.module.css";
+import navbarStyles from "../Styles/navbar.module.css";
 
 import {
   FaUserShield,
@@ -19,6 +20,8 @@ import {
 
 const AdminProfile = () => {
 
+  const navigate = useNavigate();
+  
   const [showPassword,
     setShowPassword] =
     useState(false);
@@ -34,6 +37,11 @@ const AdminProfile = () => {
   const [message,
     setMessage] =
     useState("");
+    const [errors, setErrors] = useState({
+  name: "",
+  email: "",
+  mobile: ""
+});
 
   const [showPopup,
     setShowPopup] =
@@ -64,6 +72,8 @@ const AdminProfile = () => {
       "adminId"
     );
 
+    console.log("Admin ID =", adminId);
+
   /* ================= FETCH DATA ================= */
 
   useEffect(() => {
@@ -72,17 +82,23 @@ const AdminProfile = () => {
 
   }, []);
 
-  const fetchAdminData =
-    async () => {
+  const fetchAdminData = async () => {
+
+  console.log("fetchAdminData called");
 
       try {
 
-        const res = await fetch(
-          `http://localhost:5048/api/Admin/${adminId}`
-        );
+       console.log("Fetching Admin:", adminId);
 
-        const data =
-          await res.json();
+const res = await fetch(
+  `https://api.planmyyatra.com/api/Admin/${adminId}`
+);
+
+console.log("Status:", res.status);
+
+const data = await res.json();
+
+console.log("Response:", data);
 
         if (res.ok) {
 
@@ -131,16 +147,19 @@ const AdminProfile = () => {
 
   const handleChange = (e) => {
 
-    setAdminData({
+  const { name, value } = e.target;
 
-      ...adminData,
+  setAdminData({
+    ...adminData,
+    [name]: value
+  });
 
-      [e.target.name]:
-        e.target.value
+  setErrors({
+    ...errors,
+    [name]: ""
+  });
 
-    });
-
-  };
+};
 
   /* ================= EDIT ================= */
 
@@ -162,15 +181,51 @@ const AdminProfile = () => {
 
   };
 
+  const [showLogoutPopup, setShowLogoutPopup] = useState(false);
+const [showLogoutSuccess, setShowLogoutSuccess] = useState(false);
+
+const handleLogout = () => {
+  localStorage.removeItem("adminToken");
+  localStorage.removeItem("adminData");
+  localStorage.removeItem("admin");
+
+  sessionStorage.removeItem("adminId");
+
+  setShowLogoutPopup(false);
+  setShowLogoutSuccess(true);
+
+  setTimeout(() => {
+    setShowLogoutSuccess(false);
+   window.location.href = "/";
+  }, 6000);
+};
+
   /* ================= SAVE ================= */
 
   const handleSave =
     async () => {
+const newErrors = {};
 
+if (!adminData.name.trim()) {
+  newErrors.name = "Name can't be blank";
+}
+
+if (!adminData.email.trim()) {
+  newErrors.email = "Email can't be blank";
+}
+
+if (!adminData.mobile.trim()) {
+  newErrors.mobile = "Mobile can't be blank";
+}
+
+if (Object.keys(newErrors).length > 0) {
+  setErrors(newErrors);
+  return;
+}
       try {
 
         const res = await fetch(
-          `http://localhost:5048/api/Admin/update-admin/${adminId}`,
+          `https://api.planmyyatra.com/api/Admin/update-admin/${adminId}`,
           {
             method: "PUT",
 
@@ -297,29 +352,23 @@ const AdminProfile = () => {
 
           </div>
 
-          <div
-            className={styles.menuItem}
-          >
+         <div
+  className={styles.menuItem}
+  onClick={() =>
+    navigate("/admin-forgot-password")
+  }
+>
+  <FaLock />
+  <span>Reset Password</span>
+</div>
 
-            <FaLock />
-
-            <span>
-              Reset Password
-            </span>
-
-          </div>
-
-          <div
-            className={styles.menuItem}
-          >
-
-            <FaSignOutAlt />
-
-            <span>
-              Logout
-            </span>
-
-          </div>
+       <div
+  className={styles.menuItem}
+  onClick={() => setShowLogoutPopup(true)}
+>
+  <FaSignOutAlt />
+  <span>Logout</span>
+</div>
 
         </div>
 
@@ -419,13 +468,19 @@ const AdminProfile = () => {
                 className={styles.inputIcon}
               />
 
-              <input
-                type="text"
-                name="name"
-                value={adminData.name}
-                onChange={handleChange}
-                disabled={!editMode}
-              />
+             <input
+  type="text"
+  name="name"
+  placeholder="Enter Name"
+  value={adminData.name}
+  onChange={handleChange}
+  disabled={!editMode}
+/>
+{errors.name && (
+  <p className={styles.errorText}>
+    {errors.name}
+  </p>
+)}
 
             </div>
 
@@ -448,10 +503,16 @@ const AdminProfile = () => {
               <input
                 type="email"
                 name="email"
+                placeholder="Enter Email"
                 value={adminData.email}
                 onChange={handleChange}
                 disabled={!editMode}
               />
+              {errors.email && (
+  <p className={styles.errorText}>
+    {errors.email}
+  </p>
+)}
 
             </div>
 
@@ -474,69 +535,26 @@ const AdminProfile = () => {
               <input
                 type="text"
                 name="mobile"
+                placeholder="Enter Mobile Number"
                 value={adminData.mobile}
                 onChange={handleChange}
                 disabled={!editMode}
               />
 
+{errors.mobile && (
+  <p className={styles.errorText}>
+    {errors.mobile}
+  </p>
+)}
             </div>
 
           </div>
 
           {/* PASSWORD */}
 
-          <div className={styles.inputGroup}>
+          
 
-            <label>
-              Password
-            </label>
-
-            <div className={styles.inputWrapper}>
-
-              <FaLock
-                className={styles.inputIcon}
-              />
-
-              <input
-                type={
-                  showPassword
-                    ? "text"
-                    : "password"
-                }
-
-                name="password"
-
-                value={adminData.password}
-
-                placeholder="Enter new password"
-
-                onChange={handleChange}
-
-                disabled={!editMode}
-              />
-
-              {editMode && (
-
-                <div
-                  className={styles.eyeIcon}
-                  onClick={() =>
-                    setShowPassword(
-                      !showPassword
-                    )
-                  }
-                >
-
-                  {showPassword
-                    ? <FaEyeSlash />
-                    : <FaEye />}
-
-                </div>
-
-              )}
-
-            </div>
-
-          </div>
+           
 
         </div>
 
@@ -622,6 +640,66 @@ const AdminProfile = () => {
         </div>
 
       )}
+
+      {/* LOGOUT CONFIRM POPUP */}
+
+{showLogoutPopup && (
+
+  <div className={navbarStyles.logoutOverlay}>
+
+    <div className={navbarStyles.logoutPopup}>
+
+      <h3>Confirm Logout</h3>
+
+      <p>
+        Are you sure you want to logout?
+      </p>
+
+      <div className={navbarStyles.logoutActions}>
+
+        <button
+          className={navbarStyles.cancelBtn}
+          onClick={() => setShowLogoutPopup(false)}
+        >
+          Cancel
+        </button>
+
+        <button
+          className={navbarStyles.confirmLogoutBtn}
+          onClick={handleLogout}
+        >
+          Yes Logout
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+)}
+
+{/* LOGOUT SUCCESS */}
+
+{showLogoutSuccess && (
+
+  <div className={navbarStyles.successOverlay}>
+
+    <div className={navbarStyles.successPopup}>
+
+      <div className={navbarStyles.successIcon}>
+        ✔
+      </div>
+
+      <h3>
+        Logout Successful
+      </h3>
+
+    </div>
+
+  </div>
+
+)}
 
     </div>
 

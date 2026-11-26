@@ -257,3 +257,10 @@
     font-size: 45px;
   }
 }
+.errorText{
+  color:#e53935;
+  font-size:13px;
+  margin-top:6px;
+  margin-left:4px;
+  font-weight:500;
+}

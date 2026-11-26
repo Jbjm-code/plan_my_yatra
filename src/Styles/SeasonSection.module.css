@@ -121,7 +121,6 @@
 }
 
 .oldPrice {
-  text-decoration: line-through;
   font-size: 15px;
   color: rgb(0, 0, 0);
 }
@@ -136,14 +135,17 @@
   background: white;
   border: none;
   cursor: pointer;
+  border: 1px solid rgb(67, 146, 21);
 }
 
 .left {
   left: -20px;
+  color: rgb(67, 146, 21);
 }
 
 .right {
   right: -20px;
+  color: rgb(67, 146, 21);
 }
 
 /* DESKTOP: show 3 cards */

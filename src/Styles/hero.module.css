@@ -197,8 +197,103 @@
 
 /* MOBILE */
 
+
+@media (max-width:480px){
+
+.overlay{
+    left:22px;
+    top:180px;
+}
+.lastOverlay{
+    top:50px !important;
+}
+.thirdLastOverlay{
+    top:50px !important;
+}
+.secondLastOverlay{
+    top:60px !important;
+}
+.templeOverlay{
+    top:50px !important;
+}
+.overlay h1{
+    font-size:24px;
+    line-height:1.2;
+}
+
+.overlay p{
+    font-size:15px;
+    margin-top:8px;
+}
+
+}
+
+.templeOverlay h1{
+    color:#532703;
+}
+
+.templeOverlay p{
+    color:#532703;
+}
+
+.templeOverlay .price{
+    color:#532703;
+}
+
+/* Last 3 slides only */
+.thirdLastOverlay h1{
+    color:#08043a;
+}
+
+.thirdLastOverlay p{
+    color:#08043a;
+}
+
+.thirdLastOverlay .price{
+    color:#08043a;
+}
+
+.secondLastOverlay h1{
+    color:#ffffff;
+}
+
+.secondLastOverlay p{
+    color:#ffffff;
+}
+
+.secondLastOverlay .price{
+    color:#6d220b;
+}
+
+.lastOverlay{
+    color:#ffffff;
+}
+
+.lastOverlay h1{
+    color:#082141;
+}
+
+.lastOverlay p{
+    color:#082141;
+}
+
+.lastOverlay .price{
+    color:#082141;
+}
 @media(max-width:768px){
 
+  .lastOverlay{
+    top:70px !important;
+}
+.templeOverlay{
+    top:80px !important;
+}
+.secondLastOverlay{
+    top:100px !important;
+}
+.thirdLastOverlay{
+    top:80px !important;
+}
    .companyBanner{
     top: 80%;
 
@@ -225,7 +320,7 @@ height:400px;
 
 .overlay{
 left:30px;
-top:120px;
+top:165px;   /* 160px–180px adjust as needed */
 }
 
 .overlay h1{
@@ -239,5 +334,4 @@ font-size:16px;
 .searchBar{
 display:none;
 }
-
 }

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "../Styles/cont.module.css";
 
+
 const Contact = () => {
 
   const [formData, setFormData] = useState({
@@ -10,23 +11,109 @@ const Contact = () => {
   });
 
   const [errors, setErrors] = useState({});
-
   const [showPopup, setShowPopup] = useState(false);
 
   /* ================= HANDLE INPUT ================= */
+const handleChange = (e) => {
 
-  const handleChange = (e) => {
+  const { name, value } = e.target;
 
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  let errorMessage = "";
+
+  /* ================= NAME ================= */
+
+  if (name === "name") {
+
+    if (!/^[A-Za-z\s]*$/.test(value)) {
+
+      setErrors({
+        ...errors,
+        name: "Enter valid name"
+      });
+
+      return; // stop invalid typing
+    }
+  }
+
+  /* ================= EMAIL ================= */
+
+  if (name === "email") {
+
+    const emailValue = value.replace(/\s/g, "");
+
+    // More than one @
+    if ((emailValue.match(/@/g) || []).length > 1) {
+
+      setErrors({
+        ...errors,
+        email: "Enter valid email"
+      });
+
+      return;
+    }
+
+    // More than one consecutive dot
+    if (emailValue.includes("..")) {
+
+      setErrors({
+        ...errors,
+        email: "Enter valid email"
+      });
+
+      return;
+    }
+
+    // Invalid characters
+    if (!/^[A-Za-z0-9@._-]*$/.test(emailValue)) {
+
+      setErrors({
+        ...errors,
+        email: "Invalid email format"
+      });
+
+      return;
+    }
 
     setErrors({
       ...errors,
-      [e.target.name]: ""
+      email: ""
     });
-  };
+
+  }
+
+  /* ================= MESSAGE ================= */
+
+  if (name === "message") {
+
+    if (value.length > 200) {
+
+      setErrors({
+        ...errors,
+        message: "Maximum 200 characters allowed"
+      });
+
+      return;
+    }
+
+    if (value.length >= 200) {
+
+      errorMessage = "Maximum 200 characters reached";
+    }
+  }
+
+  /* ================= UPDATE STATE ================= */
+
+  setFormData({
+    ...formData,
+    [name]: value
+  });
+
+  setErrors({
+    ...errors,
+    [name]: errorMessage
+  });
+
+};
 
   /* ================= VALIDATION ================= */
 
@@ -84,49 +171,77 @@ const Contact = () => {
     }
   };
 
+
+  const resetForm = () => {
+
+  setFormData({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  setErrors({});
+};
   /* ================= WHATSAPP ================= */
 
   const handleWhatsApp = () => {
 
-    const text = encodeURIComponent(
+  const text = encodeURIComponent(
 `Name: ${formData.name}
 
 Email: ${formData.email}
 
 Message:
 ${formData.message}`
-    );
+  );
 
-    window.open(
-      `https://wa.me/919876543210?text=${text}`,
-      "_blank"
-    );
+  window.open(
+    `https://wa.me/919067777990?text=${text}`,
+    "_blank"
+  );
 
-    setShowPopup(false);
-  };
+  resetForm();
+  setShowPopup(false);
+};
 
   /* ================= EMAIL ================= */
 
   const handleEmail = () => {
 
-    const subject = encodeURIComponent(
-      "Travel Inquiry"
-    );
+  const subject = encodeURIComponent(
+    "Travel Inquiry"
+  );
 
-    const body = encodeURIComponent(
+  const body = encodeURIComponent(
 `Name: ${formData.name}
 
 Email: ${formData.email}
 
 Message:
 ${formData.message}`
+  );
+
+  const isMobile =
+    /Android|iPhone|iPad|iPod/i.test(
+      navigator.userAgent
     );
 
-    window.location.href =
-      `mailto:travel@gmail.com?subject=${subject}&body=${body}`;
+  if (isMobile) {
 
-    setShowPopup(false);
-  };
+    window.location.href =
+      `mailto:planmyyatraa@gmail.com?subject=${subject}&body=${body}`;
+
+  } else {
+
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=planmyyatraa@gmail.com&su=${subject}&body=${body}`,
+      "_blank"
+    );
+
+  }
+resetForm();
+  setShowPopup(false);
+};
 
   return (
 
@@ -232,52 +347,46 @@ ${formData.message}`
 
       {showPopup && (
 
-        <div className={styles.popupOverlay}>
+  <div className={styles.popupOverlay}>
 
-          <div className={styles.popupBox}>
+    <div className={styles.popupBox}>
 
-            <div className={styles.popupIcon}>
-              ✔
-            </div>
+      <h3>Contact Options</h3>
 
-            <h3>
-              Contact Options
-            </h3>
+      <p>
+        Choose where you want to send message
+      </p>
 
-            <p>
-              Choose where you want to send message
-            </p>
+      <div className={styles.popupButtons}>
 
-            <div className={styles.popupButtons}>
+        <button
+          className={styles.whatsappBtn}
+          onClick={handleWhatsApp}
+        >
+          WhatsApp
+        </button>
 
-              <button
-                className={styles.whatsappBtn}
-                onClick={handleWhatsApp}
-              >
-                WhatsApp
-              </button>
+        <button
+          className={styles.emailBtn}
+          onClick={handleEmail}
+        >
+          Email
+        </button>
 
-              <button
-                className={styles.emailBtn}
-                onClick={handleEmail}
-              >
-                Email
-              </button>
+        <button
+          className={styles.cancelBtn}
+          onClick={() => setShowPopup(false)}
+        >
+          Cancel
+        </button>
 
-              <button
-                className={styles.cancelBtn}
-                onClick={() => setShowPopup(false)}
-              >
-                Cancel
-              </button>
+      </div>
 
-            </div>
+    </div>
 
-          </div>
+  </div>
 
-        </div>
-
-      )}
+)}
 
     </>
   );

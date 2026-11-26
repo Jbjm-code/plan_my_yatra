@@ -3,40 +3,34 @@ import styles from "../Styles/testimonial.module.css";
 
 const testimonialsData = [
   {
-    name: "Rekha Varadwaz",
+    name: "Virendra Jedhe",
     role: "CEO at Google Inc",
-    image: "/user1.jpg",
-    text: "Amazing travel planning experience.",
+    image: "/user2.png",
+    text: "Had a very good interaction with Plan My Yatra.The itinerary was perfectly planned, hotels were excellent.definitely consider them for future travel plans.",
   },
   {
-    name: "Paresh Rawal",
+    name: "Rohan Nikharge",
     role: "Manager at Nike Inc",
-    image: "/user2.jpg",
-    text: "Highly professional service.",
+    image: "/user1.png",
+    text: "I recently planned my trip to McLeod Ganj & Dharamshala through PlanMyYatraa and it was a great experience. Sonal did an amazing job, patiently answered our questions and created itenary as per our budget, giving right balance of sightseeing and relaxation. I would definitely recommend Planmyyatraa to anyone looking for a reliable travel planner.",
   },
   {
-    name: "Amit Sharma",
+    name: "Ashwini Kankariya",
     role: "Traveler",
-    image: "/user3.jpg",
-    text: "Loved the arrangements.",
+    image: "/user3.png",
+    text: "Sonal has planned my retreats in India and abroad with complete professionalism and flawless coordination. Everything is always smooth, organized, and stress-free.Beyond handling my professional retreat requirements, she has also beautifully planned my personal vacations with the same care and attention.Reliable, responsive, and genuinely committed — I highly recommend Sonal for both business and personal travel.",
   },
   {
-    name: "Neha Singh",
+    name: "Vipul Raulkar",
     role: "Tourist",
-    image: "/user1.jpg",
-    text: "Excellent experience overall.",
+    image: "/user4.png",
+    text: "Sonal mam planned our trip to thailand which included cities like bangkok Pattaya krabi and phuket. Totally in love with the tour packages we got and accomodation, really enjoyed our trip alot and would look forward for the upcoming adventures with plan my yatra 😃 thank you so much madam for making our first international trip memorable with lots of activities and exotic 4-5star properties all within affordable rates.",
   },
   {
-    name: "Rohit Mehta",
+    name: "Aniruddha Rao",
     role: "Traveler",
-    image: "/user2.jpg",
-    text: "Very smooth booking process.",
-  },
-   {
-    name: "Rohit Mehta",
-    role: "Traveler",
-    image: "/user2.jpg",
-    text: "Very smooth booking process.",
+    image: "/user5.png",
+    text: "Recently visited the Andamans for a special celebration, and I must say the trip organized by Sonal from PMY was absolutely commendable! The itinerary was budget-friendly, well-planned, and perfectly balanced – we had ample time to relax without feeling rushed. Every detail was thoughtfully arranged, making it a truly memorable experience.Thank you, Sonal, for the wonderful planning! I highly recommend PMY for anyone looking for a hassle-free and well-organized trip. Will definitely come back for future travel plans!",
   },
 ];
 
@@ -137,7 +131,7 @@ function Testimonials() {
 
       }
 
-    }, 3000);
+    }, 10000);
 
     return () => clearInterval(interval);
 
@@ -185,11 +179,15 @@ function Testimonials() {
 
               <div className={styles.content}>
 
-                <h4>{item.name}</h4>
+              <h4>{item.name}</h4>
 
-                <span>{item.role}</span>
+<span>{item.role}</span>
 
-                <p>{item.text}</p>
+<div className={styles.stars}>
+  ★★★★★
+</div>
+
+<p>{item.text}</p>
 
               </div>
 
@@ -212,9 +210,7 @@ function Testimonials() {
 
       </div>
 
-      <p className={styles.bottomText}>
-        Successfully worked with them
-      </p>
+    
 
     </section>
   );

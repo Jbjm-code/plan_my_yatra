@@ -123,7 +123,7 @@ heroImage:
   packageName: "Kashmir Grand Tour",
 
   heroImage:
-    "/regions/north/kashmir/grand-tour.jpg",
+    "/regions/north/kashmir1/img1.png",
 
   overview:
     "Kashmir Grand Tour is designed for families, honeymooners and guests wanting a complete Kashmir holiday. The package covers Srinagar, Pahalgam and Gulmarg with a balanced mix of sightseeing, leisure, local experiences and comfortable travel planning.",
@@ -521,11 +521,16 @@ heroImage:
   ],
 
   thingsToCarry: [
-      "Cotton Clothes and Light Jacket in Winter Evenings",
-    "Comfortable Walking Shoes",
-    "Sunglasses and Sunscreen",
-    "Sunscreen",
+      "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
       "Personal Medicines",
+
       "Valid Government ID Proof"
   ],
 
@@ -613,11 +618,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Warm Clothes",
-    "Comfortable Walking Shoes",
-    "Passport Size Photos and ID Proof for Permits",
-    "Personal Medicines",
-    "Sunscreen"
+  "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
    itineraryImages: [
@@ -705,11 +716,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Warm Clothes",
-    "Comfortable Walking Shoes",
-    "Passport Size Photos and ID Proof for Permits",
-    "Personal Medicines",
-    "Sunscreen"
+  "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
   itineraryImages: [
@@ -799,11 +816,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Light Jacket",
-    "Comfortable Shoes",
-    "Umbrella or Raincoat",
-    "Sunscreen",
-    "Valid Government ID Proof"
+ "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
    itineraryImages: [
@@ -892,11 +915,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Light Jacket",
-    "Comfortable Shoes",
-    "Umbrella or Raincoat",
-    "Sunscreen",
-    "Valid Government ID Proof"
+  "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
    itineraryImages: [
@@ -982,11 +1011,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Cotton Clothes",
-    "Comfortable Footwear",
-    "Sunscreen and Cap",
-    "Valid Government ID Proof",
-    "Personal Medicines"
+   "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
   itineraryImages: [
@@ -1069,11 +1104,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Cotton Clothes",
-    "Comfortable Footwear",
-    "Sunscreen",
-    "Mosquito Repellent",
-    "Valid Government ID Proof"
+ "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
    itineraryImages: [
@@ -1162,11 +1203,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Cotton Clothes",
-    "Comfortable Footwear",
-    "Sunscreen",
-    "Mosquito Repellent",
-    "Valid Government ID Proof"
+  "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
    itineraryImages: [
@@ -1253,11 +1300,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Light Woollens for Ooty and Coorg",
-    "Comfortable Footwear",
-    "Sunscreen",
-    "Personal Medicines",
-    "Valid Government ID Proof"
+  "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
   itineraryImages: [
@@ -1348,11 +1401,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Light Woollens for Ooty and Coorg",
-    "Comfortable Footwear",
-    "Sunscreen",
-    "Personal Medicines",
-    "Valid Government ID Proof"
+   "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
    itineraryImages: [
@@ -1441,11 +1500,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Light Woollens for Ooty and Kodaikanal",
-    "Comfortable Footwear",
-    "Sunscreen",
-    "Personal Medicines",
-    "Valid Government ID Proof"
+ "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
    itineraryImages: [
@@ -1528,11 +1593,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Beachwear",
-    "Sunscreen",
-    "Sunglasses and Hat",
-    "Comfortable Footwear",
-    "Valid Government ID Proof"
+  "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
    itineraryImages: [
@@ -1619,11 +1690,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Beachwear",
-    "Sunscreen",
-    "Sunglasses and Hat",
-    "Comfortable Footwear",
-    "Valid Government ID Proof"
+ "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
    itineraryImages: [
@@ -1706,11 +1783,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Cotton Clothes",
-    "Light Jacket in Winter",
-    "Comfortable Footwear",
-    "Sunscreen",
-    "Valid Government ID Proof"
+   "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
    itineraryImages: [
@@ -1797,10 +1880,16 @@ heroImage:
 
   thingsToCarry: [
     "Cotton Clothes",
-    "Light Jacket in Winter",
-    "Comfortable Footwear",
-    "Sunscreen",
-    "Valid Government ID Proof"
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
    itineraryImages: [
@@ -1887,11 +1976,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Comfortable Clothes",
-    "Walking Shoes",
-    "Sunscreen",
-    "Personal Medicines",
-    "Valid Government ID Proof"
+ "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
    itineraryImages: [
@@ -1975,11 +2070,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Comfortable Clothes",
-    "Walking Shoes",
-    "Sunscreen",
-    "Personal Medicines",
-    "Valid Government ID Proof"
+  "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
    itineraryImages: [
@@ -2067,11 +2168,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Comfortable Clothes",
-    "Walking Shoes",
-    "Sunscreen",
-    "Personal Medicines",
-    "Valid Government ID Proof"
+  "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
   itineraryImages: [
@@ -2157,11 +2264,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Cotton Clothes",
-    "Beachwear",
-    "Sunscreen",
-    "Valid Photo ID",
-    "Personal Medicines"
+   "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
   itineraryImages: [
@@ -2245,11 +2358,17 @@ heroImage:
   ],
 
   thingsToCarry: [
-    "Cotton Clothes",
-    "Beachwear",
-    "Sunscreen",
-    "Valid Photo ID",
-    "Personal Medicines"
+   "Warm Jacket",
+
+      "Comfortable Walking Shoes",
+
+      "Sunglasses",
+
+      "Sunscreen",
+
+      "Personal Medicines",
+
+      "Valid Government ID Proof"
   ],
 
   itineraryImages: [

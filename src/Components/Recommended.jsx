@@ -45,10 +45,23 @@ const [showConfirm, setShowConfirm] =
 const [selectedPackage, setSelectedPackage] =
   useState(null);
 
+ const formatPrice = (price) => {
+  if (!price) return "";
+
+  // Agar database me text hai to wahi return karo
+  if (isNaN(price)) {
+    return price;
+  }
+
+  const number = String(price).replace(/[^\d]/g, "");
+
+  return `₹ ${Number(number).toLocaleString("en-IN")}`;
+};
+
   useEffect(() => {
 
     axios
-      .get("https://localhost:7275/api/packages")
+      .get("https://api.planmyyatra.com/api/packages")
 
       .then((res) => {
 
@@ -125,10 +138,23 @@ const handleSaveClick = (item) => {
 const confirmSave = async () => {
 
   try {
+if (!editData.title.trim()) {
+  alert("Title cannot be blank. Please fill it.");
+  return;
+}
 
+if (!editData.price.trim()) {
+  alert("Price cannot be blank. Please fill it.");
+  return;
+}
+
+if (!editData.oldPrice.trim()) {
+  alert("Old Price cannot be blank. Please fill it.");
+  return;
+}
     await axios.put(
 
-      `https://localhost:7275/api/packages/${selectedPackage.id}`,
+      `https://api.planmyyatra.com/api/packages/${selectedPackage.id}`,
 
       editData
 
@@ -216,7 +242,9 @@ const confirmSave = async () => {
 
         <div className={styles.cardContainer} ref={scrollRef}>
 
-          {packages.map((item, index) => (
+          {packages
+  .filter((item) => item.slug !== "andaman")
+  .map((item, index) => (
 
            <div
   className={styles.card}
@@ -245,15 +273,16 @@ const confirmSave = async () => {
                {editingId === item.id ? (
 
   <input
-    className={styles.editInput}
-    value={editData.title}
-    onChange={(e) =>
-      setEditData({
-        ...editData,
-        title: e.target.value
-      })
-    }
-  />
+  className={styles.editInput}
+  placeholder="Package Name"
+  value={editData.title}
+  onChange={(e) =>
+    setEditData({
+      ...editData,
+      title: e.target.value
+    })
+  }
+/>
 
 ) : (
 
@@ -262,22 +291,23 @@ const confirmSave = async () => {
 )}
 {editingId === item.id ? (
 
-  <input
-    className={styles.editPriceInput}
-    value={editData.oldPrice}
-    onChange={(e) =>
-      setEditData({
-        ...editData,
-        oldPrice: e.target.value
-      })
-    }
-  />
+<input
+  className={styles.editPriceInput}
+  placeholder="Old Price"
+  value={editData.oldPrice}
+  onChange={(e) =>
+    setEditData({
+      ...editData,
+      oldPrice: e.target.value
+    })
+  }
+/>
 
 ) : (
 
-  <span className={styles.oldPrice}>
-    {item.oldPrice}
-  </span>
+ <span className={styles.oldPrice}>
+  {formatPrice(item.oldPrice)}
+</span>
 
 )}
 
@@ -292,20 +322,21 @@ const confirmSave = async () => {
 
                 {editingId === item.id ? (
 
-               <input
-                className={styles.editPriceInput}
-                    value={editData.price}
-                      onChange={(e) =>
-                    setEditData({
-                  ...editData,
-                      price: e.target.value
-                     })
-                         }
-                             />
+              <input
+  className={styles.editPriceInput}
+  placeholder="Offer Price"
+  value={editData.price}
+  onChange={(e) =>
+    setEditData({
+      ...editData,
+      price: e.target.value
+    })
+  }
+/>
 
                             ) : (
 
-                <strong>{item.price}</strong>
+                <strong>{formatPrice(item.price)}</strong>
 
                   )}
 

@@ -43,7 +43,7 @@ function Services() {
 
             <p>{item.desc}</p>
 
-            <span className={styles.link}>Book Now</span>
+            
           </div>
         ))}
       </div>
